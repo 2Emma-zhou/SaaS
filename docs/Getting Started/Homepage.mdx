@@ -1,6 +1,6 @@
 
 
-<img width={750} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/4.png" />
+<img width={750} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/4.png" />
 
 <table>
         <caption>Homepage</caption>
@@ -12,25 +12,26 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
+        <tr>
                 <td>1</td>
-                <td>Menu Bar</td>
-                <td>Lists the function menus of the platform, enabling quick access to various function modules.</td>
+                <td>Header</td>
+                <td>Platform name and display/hide module list.</td>
             </tr>
             <tr>
                 <td>2</td>
-                <td>Tool Bar</td>
-                <td>Common operations on the platform, including search, quick guide, tasks and user information.</td>
+                <td>Menu Bar</td>
+                <td>Lists the function menus of the platform, enabling quick access to various function modules.</td>
             </tr>
+            
             <tr>
                 <td>3</td>
-                <td>Import/Export</td>
-                <td>Integrate the data import/export function from <b>Namespace/Source Flow/Event Flow/Dashboard</b> together.</td>
+                <td>Homepage</td>
+                <td>Displays the embedded MQTT broker throughput rate and messages.</td>
             </tr>
             <tr>
                 <td>4</td>
-                <td>Function Module</td>
-                <td>The added function modules of the platform.</td>
+                <td>Account Info</td>
+                <td>Account and system settings.</td>
             </tr>
         </tbody>
     </table>
@@ -46,93 +47,35 @@
         </thead>
         <tbody>
             <tr>
-                <td rowspan="4">UNS</td>
-                <td>Namespace</td>
+                <td rowspan="3">Unified Namesapce</td>
+                <td>Connectivity</td>
+                <td>Generates authentication for third-party clients to connect to the platform and monitor their connections.</td>
+            </tr>
+            <tr>
+                <td>UNS</td>
                 <td>Builds data models for subsequent data integration and usage.</td>
             </tr>
             <tr>
-                <td>Source Flow</td>
-                <td>Uses NodeRed to define the data source of the created model.</td>
+                <td>Flow</td>
+                <td>Customizes data flows using NodeRed, integrating both <b>Source Flow</b> and <b>Event Flow</b> modules.</td>
             </tr>
             <tr>
-                <td>Event Flow</td>
-                <td>Customizes data flows using NodeRed, integrating both <b>Source Flow</b> and <b>Namespace</b> modules.</td>
+                <td rowspan="3">App</td>
+                <td>Builder</td>
+                <td>Use LLM to create applications.</td>
             </tr>
             <tr>
-                <td>Dashboards</td>
-                <td>Displays data from <b>Namespace</b> on dashboards according to specific design.</td>
+                <td>Apps</td>
+                <td>Manages custom applications.</td>
             </tr>
             <tr>
-                <td rowspan="3">Dev Tools</td>
-                <td>SQL Editor</td>
-                <td>Manages databases connected from <b>Data Source Management</b>.</td>
+                <td>Templates</td>
+                <td>Application templates.</td>
             </tr>
             <tr>
+                <td>Data Analysis</td>
                 <td>Notebook</td>
                 <td>Adopts Marimo for easy python script usage. For example, train models, run SQL queries and others.</td>
-            </tr>
-            <tr>
-                <td>Data Source Management</td>
-                <td>Connects third-party data sources for quick access.</td>
-            </tr>
-            {/* <tr>
-                <td>CICD</td>
-                <td>Integrates Gitea for repository management.</td>
-            </tr>
-            <tr>
-                <td rowspan="3">AppSpace</td>
-                <td>GenApps</td>
-                <td>Displays all applications built on <b>GenerativeUI</b>.</td>
-            </tr>
-            <tr>
-                <td>GenerativeUI</td>
-                <td>Integrates generative AI to build applications through natural language.</td>
-            </tr>
-            <tr>
-                <td>MCP Client</td>
-                <td>Embedded MCP server for internal data topic queries, and enables you to use external MCP services.</td>
-            </tr> */}
-            <tr>
-                <td rowspan="10">System</td>
-                <td>Routing Management</td>
-                <td>Customizes Tier0 function module routing.</td>
-            </tr>
-            <tr>
-                <td>Authentication</td>
-                <td>Manages user permissions.</td>
-            </tr>
-            <tr>
-                <td>User Management</td>
-                <td>Enables general user and role management.</td>
-            </tr>
-            
-            <tr>
-                <td>Containers</td>
-                <td>Integrates Portainer to manage docker containers.</td>
-            </tr>
-            <tr>
-                <td>About Us</td>
-                <td>Introduces Tier0 and displays the integrated open source applications.</td>
-            </tr>
-            <tr>
-                <td>Advanced Use</td>
-                <td>Provides account and password of integrated application for deeper exploration.</td>
-            </tr>
-            <tr>
-                <td>Plugin Management</td>
-                <td>Manages plugins installed on Tier0.</td>
-            </tr>
-            <tr>
-                <td>Theme Management</td>
-                <td>Manages Tier0 themes.</td>
-            </tr>
-            <tr>
-                <td>I18n Management</td>
-                <td>Manages frontend language display and supports multiple languages.</td>
-            </tr>
-            <tr>
-                <td>Menu Config</td>
-                <td>Supports menu changes on all existing function modules.</td>
             </tr>
         </tbody>
     </table>

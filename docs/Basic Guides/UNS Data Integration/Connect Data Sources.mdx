@@ -3,12 +3,12 @@ hide_title: true
 ---
 
 ## How to Add Data Sources
-Once the data model is built under **Namespace**, you need to connect real data to the model for subsequent processing and use.
+Once the data model is built under **UNS**, you need to connect real data to the model for subsequent processing and use.
 
 ### Adding Data Flow Manually
-1. Log in to Tier0, go to **UNS** > **Source Flow**.
+1. Log in to Tier0, go to **Flows** > **Source Flow**.
 
-<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/108.png" />
+<img src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/23.png" />
 
 <table>
   <thead>
@@ -20,34 +20,35 @@ Once the data model is built under **Namespace**, you need to connect real data 
   </thead>
   <tbody>
   <tr>
-      <td rowspan="2">1</td>
+      <td>1</td>
+      <td>Flow Display</td>
+      <td>Select to view all flows or only one category.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Flow List</td>
+      <td>Displays flow information. Click the flow name to start editing the data flow.</td>
+    </tr>
+  <tr>
+      <td rowspan="2">3</td>
       <td>Search</td>
       <td>Search for existing data flows.</td>
     </tr>
     <tr>
-      <td>New Source Flow</td>
+      <td>New Flow</td>
       <td>Add a data flow.</td>
     </tr>
-    <tr>
-      <td rowspan="1">2</td>
-      <td>Flow List</td>
-      <td>Displays flows information. Click the flow name to start editing the data flow.</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Display</td>
-      <td>Switch flow display between blocks and list.</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>Flow Operations</td>
-      <td>Copy / Edit / Delete the data flow.</td>
-    </tr>
+    
   </tbody>
 </table>
 
 
-2. Click **New Source Flow**, enter a name and click **Save**.
+2. Click **New Flow**, enter a name, select **Source Flow** as **Flow Type**, and click **Save**.
+- **Source Flow**: Used to collect data from data sources and send it to UNS.
+- **Event Flow**: Used to process data from UNS.
+
+<img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/24.png" />
+
 3. Click the flow you just added, and drag in nodes according to your data source type (e.g.`modbus`).
 4. Drag in an **mqtt out** node, and finish its configurations.
 
@@ -68,16 +69,69 @@ For example, the data model structure is <code>factory/equipment/cnc</code>, the
 
 5. Click **Deploy** at the upper-right corner, trigger the flow and the data will be sent to corresponding model under **Namespace**.
 
+### Sending Data through MQTT Client
+Tier0 enables you to send data to data models through third-party MQTT clients.
+1. Install an MQTT client, such as [MQTTX](https://mqttx.app/downloads).
+2. Log in to Tier0, select **Connectivity**.
+
+<img width={650} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/22.png" />
+
+<table>
+  <thead>
+    <tr>
+      <th>Index</th>
+      <th>Item</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+      <td>1</td>
+      <td>Current Online Connections</td>
+      <td>Displays the number of current online connections to the internal MQTT broker.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Message Throughput</td>
+      <td>Displays the message throughput of the internal MQTT broker.</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Client List</td>
+      <td>Displays the list of connected clients and authentication.</td>
+    </tr>
+  </tbody>
+</table>
+
+3. Click **Auth**.
+
+<img width={650} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/18.png" />
+
+4. Click **Create**, enter description, and then click **Create**.
+
+<img width={350} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/19.png" />
+
+:::info
+Make a note of the generated **Client ID**, **Username**, and **Password**. You will need them to configure the MQTT client.
+:::
+
+5. Add a new connection in the MQTT client with the authentication information from Tier0.
+
+<img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/20.png" />
+
+6. Click **Connect**, click **Clients** tab on Tier0 and see whether the client is connected.
+7. Copy the topic of the data model under **UNS**, and publish a message to it on the client.
+
+<img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/21.png" />
+
+8. Go back to **UNS**, check whether the data is received.
 
 ### Configuring Data Source through Generated Flow
 :::note
-Data flow will only be automatically generated when you select **Mock Data** while creating topics.
+Data flow will only be automatically generated when you select **Use mock data** while creating topics.
 :::
-1. Log in to Tier0, go to **UNS** > **Namespace**, and under the **Topic** tab, select a file.
-2. Scroll down to **Topology**, click the icon on **Source Flow** to redirect to the generated data flow under **Source Flow**.
-
-<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/49.png" />
-
+1. Log in to Tier0, go to **Flows** > **Source Flow**.
+2. Find the flow with the same name as the created topic, and click to edit it.
 3. Change the data source of the generated flow.
 :::info
 Make sure the returned data of the source node is **JSON object**. Currently, Tier0 can only parse this data type.
@@ -90,6 +144,6 @@ Make sure the returned data of the source node is **JSON object**. Currently, Ti
 <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/51.png" />
 
 5. Click **Deploy** at the upper-right corner, and then trigger the flow.
-6. Go back to **Namespace**, check whether the data is sent back to the file (data tag).
+6. Go back to **UNS**, check whether the data is received.
 
-<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/52.png" />
+<img src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/25.png" />

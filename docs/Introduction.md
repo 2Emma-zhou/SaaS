@@ -6,19 +6,14 @@ sidebar_label: What is Tier0?
 ---
 
 ## Concept
-Tier0 is an open-source industrial data integration platform built on the Unified Namespace (UNS) methodology and powered by production-grade open-source technologies.
+Tier0 is an open-source industrial data integration platform built on the Unified Namespace (UNS) methodology, aiming to break data silos and data spaghetti, eventually build a single source of truth.
 
-<img width={750} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/1.png" />
+<img width={550} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/54.png" />
 
-:::info
-Node-RED and Grafana are widely used in the Tier0 workflow. They both are mature open-source tools with extensive documentation. For detailed tutorials, please refer to:
-- <a href="https://nodered.org/docs/tutorials/first-flow">NodeRed</a>.
-- <a href="https://grafana.com/docs/grafana/latest/dashboards/build-dashboards/create-dashboard/">Grafana</a>.
-:::
 
 ## Architecture
 
-<img width={750} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/2.jpg" />
+<img width={750} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/55.jpg" />
 
 #### Source Flow
 Node-RED as core, serves as the data collector of Tier0, which is necessary for building a unified namespace.
@@ -31,8 +26,8 @@ For example, you have a CNC machine in your factory, workshop A, production line
 
 #### Sink
 The storage layer of Tier0, which enables efficient data querying and compression.
-- Time-series data is stored in TimescaleDB.
-- Relational data (e.g. CRM data) is stored in PostgreSQL.
+- TTSDB is for real-time operational metrics.
+- S3 is the system of record for all historical and analytical data.
 
 #### Event Flow
 Node-RED as core, completes event-driven data flows.

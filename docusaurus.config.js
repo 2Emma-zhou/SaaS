@@ -118,18 +118,18 @@ const config = {
             position: 'left',
             label: 'Doc',
           },
-          {
-            type: 'docSidebar',
-            sidebarId: 'usecase',
-            position: 'left',
-            label: 'Use Case',
-          },
+          // {
+          //   type: 'docSidebar',
+          //   sidebarId: 'usecase',
+          //   position: 'left',
+          //   label: 'Use Case',
+          // },
           {to: '/openapi', label: 'Open API', position: 'left'},
           // {to: '/blog', label: 'Blog', position: 'left'},
-          {
-          type: 'localeDropdown',
-          position: 'right',
-        },
+        //   {
+        //   type: 'localeDropdown',
+        //   position: 'right',
+        // },
           {
             href: 'https://supos.ai',
             label: 'Official Site',

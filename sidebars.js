@@ -30,7 +30,6 @@ const sidebars = {
               'Introduction',
               // 'What Can Tier0 Do',
               'Basic Guides/UNS Data Integration/User Journey',
-              'Use Case/OEE Evaluation',
               
             ]
             },
@@ -42,7 +41,7 @@ const sidebars = {
         description: 'This section shows a simple example of what you can do with Tier0. Come take a look!.',
     },
         items: [
-          'Getting Started/Deploy Tier0',
+          // 'Getting Started/Deploy Tier0',
             'Getting Started/Login',
             'Getting Started/Homepage',
         ]
@@ -57,13 +56,13 @@ const sidebars = {
         },
             items: [
               'Basic Guides/UNS Data Integration/Build Data Models',
+              'Basic Guides/UNS Data Integration/Edit UNS Models',
               'Basic Guides/UNS Data Integration/Connect Data Sources',
               
             'Basic Guides/UNS Data Integration/Process Data',
             
             'Basic Guides/UNS Data Integration/Visualize Data',
-            'Basic Guides/UNS Data Integration/Display Data on Dashboards',
-            'Basic Guides/UNS Data Integration/Obtain Data from Tier0',
+            // 'Basic Guides/UNS Data Integration/Obtain Data from Tier0',
             {
           type: 'category', 
           label: 'Common Data Sources',
@@ -105,7 +104,7 @@ const sidebars = {
         },
             items: [
               // 'Basic Guides/Database Management/Data Source Management',
-              'Basic Guides/Database Management/SQL Editor',
+              // 'Basic Guides/Database Management/SQL Editor',
               'Basic Guides/Database Management/Notebook',
 
             ]
@@ -117,12 +116,15 @@ const sidebars = {
             type: 'generated-index'
         },
             items: [
-              'Basic Guides/Routing Management',
-              'Basic Guides/System Management/User Management',
-              'Basic Guides/System Management/Permission Management',
-              'Basic Guides/System Management/I18n Management',
-              'Basic Guides/System Management/Menu Config',
-              'Basic Guides/System Management/Theme Management',
+              'Basic Guides/System Management/Account Management',
+              'Basic Guides/System Management/Workspace Management',
+
+              // 'Basic Guides/Routing Management',
+              // 'Basic Guides/System Management/User Management',
+              // 'Basic Guides/System Management/Permission Management',
+              // 'Basic Guides/System Management/I18n Management',
+              // 'Basic Guides/System Management/Menu Config',
+              // 'Basic Guides/System Management/Theme Management',
 
 
             ]
@@ -134,17 +136,17 @@ const sidebars = {
 
   // But you can create a sidebar manually
   
-  usecase: [
-    // 'Use Case/OEE Evaluation',
-    'Use Case/PCBA Process Simulation',
+  // usecase: [
+  //   // 'Use Case/OEE Evaluation',
+  //   'Use Case/PCBA Process Simulation',
 
-    // {
-    //   type: 'category',
-    //   label: 'Tutorial',
-    //   items: ['tutorial-basics/create-a-document'],
-    // },
-  ],
+  //   // {
+  //   //   type: 'category',
+  //   //   label: 'Tutorial',
+  //   //   items: ['tutorial-basics/create-a-document'],
+  //   // },
+  // ],
    
 };
-
+   
 export default sidebars;

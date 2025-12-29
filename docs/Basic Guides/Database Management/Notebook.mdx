@@ -4,16 +4,64 @@ hide_title: true
 
 Tier0 adopts Marimo for easy python script usage. For example, you can train models, run SQL queries and design dashboards with data connected in **Namespace**.
 
+## Creating Notebooks
+
+1. Log in to Tier0, and then select **Notebook**.
+
+<img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/34.png" />
+
+<table>
+  <thead>
+    <tr>
+      <th>No.</th>
+      <th>Item</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Category</td>
+      <td>Displays notebooks by their status.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Notebook Treemap</td>
+      <td>Lists notebooks in a folder-file hierarchical manner, you can add notebooks, refresh lists and search for notebooks.</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Details List</td>
+      <td>Displays all notebooks of the selected folder in details.</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Operations</td>
+      <td>Search for notebooks, and import notebooks.</td>
+    </tr>
+  </tbody>
+</table>
+
+2. Select <img src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/6.png" /> > **New Folder**.
+
+<img width={350} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/35.png" />
+
+3. Enter a folder name and click **Create**.
+4. Click the created folder, and then select <img src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/6.png" /> > **New Notebook**.
+
+<img width={350} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/36.png" />
+
+5. Enter the notebook information and click **Create**.
+6. Click the created notebook on the right side, and start editing.
+
+<img width={650} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/37.png" />
+
+
 ## Using Notebook to Run SQL Queries
 
-:::note
-Tier0 databases are initially connected.
-:::
-1. Log in to Tier0, and then select **Dev Tools** > **Notebook**.
+1. Log in to Tier0, and then select **Notebook**.
 
-<img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/164.png" />
-
-2. Click **Create a new notebook**, and then click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/165.png" /> to run the first cell.
+2. Click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/165.png" /> to run the first cell.
 
 <img width={750} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/166.png" />
 
@@ -21,18 +69,19 @@ Tier0 databases are initially connected.
 
 <img width={750} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/167.png" />
 
-4. Get the table name from topic **Details** under **Namespace**, and then write SQL statementsa.
+:::tip
+- If no database is connected, click **Explore data sources** on the left panel to connect a database first.
+- It can happen that certain packages are missing while connecting to some types of databases. In this case, click **Manage packages** on the left to install.
+:::
+
+4. Find the table you need on the left, click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/170.png" /> next to the table name to generate SQL statements automatically.
 
 <img width={650} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/168.png" />
 
-:::tip
-- Click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/169.png" /> on the left panel to view the list of connected databases.
-- Find the table you need, click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/170.png" /> next to the table name to generate SQL statements automatically.
-:::
 
 ## Using Notebook to Draw Charts
-1. Log in to Tier0, and then select **Dev Tools** > **Notebook**.
-2. Click **Create a new notebook**, and then add the following 3 cells to draw a simple line chart.
+1. Log in to Tier0, and then select **Notebook**.
+2. Create a new notebook, and then add the following 3 cells to draw a simple line chart.
 - Cell 1: Import libraries
 ```python
 import marimo as mo
@@ -42,7 +91,7 @@ import marimo as mo
 _df = mo.sql(
     f"""
     SELECT *
-    FROM "CNC3_b9d4aee89fba481aaf8f"
+    FROM "table_name"
     LIMIT 100
     """,
     engine=tsdb_engine
