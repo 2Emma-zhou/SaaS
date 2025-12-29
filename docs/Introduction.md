@@ -13,7 +13,7 @@ Tier0 is an open-source industrial data integration platform built on the Unifie
 
 ## Architecture
 
-<img width={750} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/55.jpg" />
+<img width={750} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/55.png" />
 
 #### Source Flow
 Node-RED as core, serves as the data collector of Tier0, which is necessary for building a unified namespace.
