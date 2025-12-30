@@ -26,7 +26,7 @@ For example, you have a CNC machine in your factory, workshop A, production line
 
 #### Sink
 The storage layer of Tier0, which enables efficient data querying and compression.
-- TTSDB is for real-time operational metrics.
+- TSDB is for real-time operational metrics.
 - S3 is the system of record for all historical and analytical data.
 
 #### Event Flow
