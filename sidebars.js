@@ -24,7 +24,7 @@ const sidebars = {
           label: 'Overview',
           link: {
             type: 'generated-index',
-            description: 'This section provides guides on basic usage of Tier0, and the overview of the system.',
+            description: 'This section introduces the concept of Tier0, providing an overview of the system.',
         },
             items: [
               'Introduction',
@@ -38,7 +38,7 @@ const sidebars = {
       label: 'Quick Start Guide',
       link: {
         type: 'generated-index',
-        description: 'This section shows a simple example of what you can do with Tier0. Come take a look!.',
+        description: 'This section guides you through the initial setup and configuration of Tier0.',
     },
         items: [
           // 'Getting Started/Deploy Tier0',
@@ -52,7 +52,7 @@ const sidebars = {
           label: 'How-to Guide',
           link: {
             type: 'generated-index',
-            description: 'This section provides guides on how to build data models in Tier0.',
+            description: 'This section provides guides on how to build data models, and use them in Tier0.',
         },
             items: [
               'Basic Guides/UNS Data Integration/Build Data Models',
