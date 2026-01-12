@@ -31,13 +31,3 @@ The storage layer of Tier0, which enables efficient data querying and compressio
 
 #### Event Flow
 Node-RED as core, completes event-driven data flows.
-
-
-## Join Us
-Tier0 Community Edition isn’t just a solution—it’s a movement. We invite everyone interested in open-source technology to contribute and shape our future together.
-
-If you like our work, give us a ⭐️ on GitHub—it helps more people discover the project.
-
-*Join us today as we continue to push the boundaries of what’s possible with open-source technology!*
-- Github: https://github.com/FREEZONEX/Tier0-Edge
-- Discord: https://lnkd.in/egT8aFE3
