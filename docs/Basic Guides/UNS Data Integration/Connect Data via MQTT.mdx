@@ -1,0 +1,95 @@
+---
+hide_title: true
+---
+
+## How to Add Data Sources via MQTT Authentication
+Tier0 offers an embedded MQTT broker that allows third-party clients to connect and send data to the data models built under **UNS**.
+
+1. Log in to Tier0, select **Connectivity**.
+
+<img width={650} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/22.png" />
+
+<table>
+  <thead>
+    <tr>
+      <th>Index</th>
+      <th>Item</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+      <td>1</td>
+      <td>Current Online Connections</td>
+      <td>Displays the number of current online connections to the internal MQTT broker.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Message Throughput</td>
+      <td>Displays the message throughput of the internal MQTT broker.</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Client List</td>
+      <td>Displays the list of connected clients and authentication.</td>
+    </tr>
+  </tbody>
+</table>
+
+3. Click **Auth**.
+
+<img width={650} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/18.png" />
+
+4. Click **Create**, enter description, and then click **Create**.
+
+<img width={350} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/19.png" />
+
+:::info
+Make a note of the generated **Client ID**, **Username**, and **Password**. You will need them to configure the MQTT client.
+:::
+
+5. Install an MQTT client, such as MQTTX, MQTT Explorer and others.
+5. Add a new connection in the MQTT client with the authentication information from Tier0.
+
+:::note
+3 types of client connection are listed as examples below.
+:::
+
+<div className="doc-indent">
+
+- **MQTTX**
+
+1. Add a new connection in MQTTX with the authentication information from Tier0.
+
+<img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/20.png" />
+
+2. Click **Connect**.
+
+- **MQTT Explorer**
+
+1. Add a new connection in MQTT Explorer with the username and password.
+
+<img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/20-1.png" />
+
+2. Click **ADVANCED**, change the client ID.
+
+<img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/20-2.png" />
+
+3. Click **BACK** and then **CONNECT**.
+
+- **NodeRed**
+
+1. Open your NodeRed instance, double-click the `mqtt in` node.
+2. Add a new MQTT broker with the authentication information from Tier0.
+
+<img width={350} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/20-3.png" />
+<img width={350} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/20-4.png" />
+
+</div>
+
+6. Go back to the **Connectivity** page on Tier0, click **Clients** tab and see whether the client is connected.
+7. Copy the topic of the data model under **UNS**, and publish a message to it on the client.
+
+<img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/21.png" />
+
+8. Go back to **UNS**, check whether the data is received.

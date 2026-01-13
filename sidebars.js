@@ -57,8 +57,8 @@ const sidebars = {
             items: [
               'Basic Guides/UNS Data Integration/Build Data Models',
               'Basic Guides/UNS Data Integration/Edit UNS Models',
-              'Basic Guides/UNS Data Integration/Connect Data Sources',
-              
+              'Basic Guides/UNS Data Integration/Connect Data via Flow',
+              'Basic Guides/UNS Data Integration/Connect Data via MQTT',
             'Basic Guides/UNS Data Integration/Process Data',
             
             'Basic Guides/UNS Data Integration/Visualize Data',
