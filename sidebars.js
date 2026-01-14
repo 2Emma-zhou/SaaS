@@ -98,7 +98,7 @@ const sidebars = {
           },
           {
           type: 'category', 
-          label: 'Dev Tools',
+          label: 'Advanced Guide',
           link: {
             type: 'generated-index'
         },
@@ -106,6 +106,7 @@ const sidebars = {
               // 'Basic Guides/Database Management/Data Source Management',
               // 'Basic Guides/Database Management/SQL Editor',
               'Basic Guides/Database Management/Notebook',
+              'Basic Guides/App/Model Engine',
 
             ]
             },
@@ -118,6 +119,7 @@ const sidebars = {
             items: [
               'Basic Guides/System Management/Account Management',
               'Basic Guides/System Management/Workspace Management',
+              'Basic Guides/System Management/Billing Plan',
 
               // 'Basic Guides/Routing Management',
               // 'Basic Guides/System Management/User Management',
