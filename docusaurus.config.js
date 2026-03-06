@@ -125,6 +125,10 @@ const config = {
           //   label: 'Use Case',
           // },
           {to: '/openapi', label: 'Open API', position: 'left'},
+        //   {
+        //   type: 'localeDropdown',
+        //   position: 'right',
+        // },
           // {to: '/blog', label: 'Blog', position: 'left'},
         //   {
         //   type: 'localeDropdown',
@@ -137,51 +141,55 @@ const config = {
           },
         ],
       },
-      // footer: {
-      //   style: 'dark',
-      //   links: [
-      //     {
-      //       title: 'Docs',
-      //       items: [
-      //         {
-      //           label: 'Tutorial',
-      //           to: '/docs/intro',
-      //         },
-      //       ],
-      //     },
-      //     {
-      //       title: 'Community',
-      //       items: [
-      //         {
-      //           label: 'Stack Overflow',
-      //           href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-      //         },
-      //         {
-      //           label: 'Discord',
-      //           href: 'https://discordapp.com/invite/docusaurus',
-      //         },
-      //         {
-      //           label: 'X',
-      //           href: 'https://x.com/docusaurus',
-      //         },
-      //       ],
-      //     },
-      //     {
-      //       title: 'More',
-      //       items: [
-      //         {
-      //           label: 'Blog',
-      //           to: '/blog',
-      //         },
-      //         {
-      //           label: 'GitHub',
-      //           href: 'https://github.com/facebook/docusaurus',
-      //         },
-      //       ],
-      //     },
-      //   ],
-      //   copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
-      // },
+      footer: {
+  style: 'dark',
+  links: [
+    {
+      title: 'Docs',
+      items: [
+        {
+          label: 'Tutorial',
+          to: '/',
+        },
+      ],
+    },
+    {
+      title: 'Community',
+      items: [
+        {
+          label: 'Discord',
+          href: 'https://lnkd.in/egT8aFE3',
+        },
+        {
+          label: 'GitHub',
+          href: 'https://github.com/FREEZONEX/Tier0-Edge',
+        },
+      ],
+    },
+    {
+      title: 'More',
+      items: [
+        {
+          label: 'LinkedIn',
+          href: 'https://www.linkedin.com/uas/login?session_redirect=%2Fcompany%2F91136833',
+        },
+      ],
+    },
+  ],
+
+  copyright: `
+    Copyright © ${new Date().getFullYear()} FreezoneX, Inc.
+    <span>
+      <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备2026005893号-2</a>
+      &nbsp;
+      <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33011302001004" target="_blank">
+        <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/beian.png"
+             style="width:14px;vertical-align:middle;margin-right:4px;" />
+        浙公网安备33011302001019号
+      </a>
+    </span>
+  `,
+},
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
