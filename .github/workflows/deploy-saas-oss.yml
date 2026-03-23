@@ -35,31 +35,49 @@ jobs:
           # Fix region format for endpoint
           ENDPOINT="oss-${OSS_REGION}.aliyuncs.com"
           
-          # Also fix endpoint in env for python
-          echo "ENDPOINT=$ENDPOINT" >> $GITHUB_ENV
-          
           # Generate date
           DATE=$(date -u -R)
           
-          # Upload each file using ossutil if available, otherwise use curl with proper escaping
+          # Upload each file
           while IFS= read -r -d '' file; do
-            FILENAME="${file#./build/}"
+            # URL encode the filename
+            FILENAME=$(python3 -c "import urllib.parse; print(urllib.parse.quote('${file#./build/}'))")
             echo "Uploading $FILENAME..."
             
-            # Generate signature
+            # Generate signature (use URL encoded path)
             STRING_TO_SIGN="PUT\n\napplication/octet-stream\n${DATE}\n/${OSS_BUCKET}/${FILENAME}"
             SIGNATURE=$(echo -en "$STRING_TO_SIGN" | openssl dgst -sha1 -hmac "$OSS_ACCESS_KEY_SECRET" | sed 's/^.*= //')
             
-            curl -X PUT -T "$file" \
-              -H "Date: $DATE" \
-              -H "Content-Type: application/octet-stream" \
-              -H "Authorization: OSS $OSS_ACCESS_KEY_ID:$SIGNATURE" \
-              "https://${OSS_BUCKET}.${ENDPOINT}/${FILENAME}" -f -s
-              
-            if [ $? -eq 0 ]; then
-              echo "Uploaded: $FILENAME"
-            else
-              echo "Failed: $FILENAME"
-            fi
+            # Use python to upload to handle special characters
+            python3 << PYEOF
+import os
+import subprocess
+import urllib.parse
+
+file_path = "$file"
+filename = "$FILENAME"
+
+# Get signature from shell
+result = subprocess.run(
+    ['bash', '-c', 'echo -en "PUT\\n\\napplication/octet-stream\\n${DATE}\\n/${OSS_BUCKET}/${FILENAME}" | openssl dgst -sha1 -hmac "$OSS_ACCESS_KEY_SECRET" | sed "s/^.*= //"'],
+    capture_output=True, text=True
+)
+signature = result.stdout.strip()
+
+# Upload via curl
+url = f"https://$OSS_BUCKET.$ENDPOINT/{filename}"
+cmd = [
+    'curl', '-X', 'PUT', '-T', file_path,
+    '-H', f'Date: $DATE',
+    '-H', 'Content-Type: application/octet-stream',
+    '-H', f'Authorization: OSS $OSS_ACCESS_KEY_ID:{signature}',
+    url, '-f', '-s'
+]
+result = subprocess.run(cmd)
+if result.returncode == 0:
+    print(f"Uploaded: {filename}")
+else:
+    print(f"Failed: {filename}, code: {result.returncode}")
+PYEOF
           done < <(find ./build -type f -print0)
           echo "Done!"
