@@ -32,18 +32,31 @@ jobs:
           OSS_BUCKET: ${{ secrets.OSS_BUCKET }}
           OSS_REGION: ${{ secrets.OSS_REGION }}
         run: |
-          # Generate date and signature
-          DATE=$(date -u -R)
-          SIGNATURE=$(echo -en "PUT\n\napplication/octet-stream\n${DATE}\n/$OSS_BUCKET/" | openssl dgst -sha1 -hmac "$OSS_ACCESS_KEY_SECRET" | sed 's/^.*= //')
+          # Fix region format for endpoint
+          ENDPOINT="oss-${OSS_REGION}.aliyuncs.com"
           
-          # Upload each file
-          for file in $(find ./build -type f); do
+          # Generate date
+          DATE=$(date -u -R)
+          
+          # Upload each file using ossutil if available, otherwise use curl with proper escaping
+          while IFS= read -r -d '' file; do
             FILENAME="${file#./build/}"
             echo "Uploading $FILENAME..."
+            
+            # Generate signature
+            STRING_TO_SIGN="PUT\n\napplication/octet-stream\n${DATE}\n/${OSS_BUCKET}/${FILENAME}"
+            SIGNATURE=$(echo -en "$STRING_TO_SIGN" | openssl dgst -sha1 -hmac "$OSS_ACCESS_KEY_SECRET" | sed 's/^.*= //')
+            
             curl -X PUT -T "$file" \
               -H "Date: $DATE" \
               -H "Content-Type: application/octet-stream" \
               -H "Authorization: OSS $OSS_ACCESS_KEY_ID:$SIGNATURE" \
-              "https://$OSS_BUCKET.oss-$OSS_REGION.aliyuncs.com/$FILENAME"
-          done
+              "https://${OSS_BUCKET}.${ENDPOINT}/${FILENAME}" -f -s
+              
+            if [ $? -eq 0 ]; then
+              echo "Uploaded: $FILENAME"
+            else
+              echo "Failed: $FILENAME"
+            fi
+          done < <(find ./build -type f -print0)
           echo "Done!"
