@@ -37,7 +37,7 @@ jobs:
         env:
           OSS_ACCESS_KEY_ID: ${{ secrets.OSS_ACCESS_KEY_ID }}
           OSS_ACCESS_KEY_SECRET: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
-          OSS_BUCKET: tier0saas1
+          OSS_BUCKET: tier0saas
           OSS_REGION: cn-hangzhou
         run: |
           python3 << 'EOF'
@@ -46,7 +46,7 @@ jobs:
           
           auth = oss2.Auth('${{ secrets.OSS_ACCESS_KEY_ID }}', '${{ secrets.OSS_ACCESS_KEY_SECRET }}')
           endpoint = 'cn-hangzhou.aliyuncs.com'
-          bucket = oss2.Bucket(auth, 'https://' + endpoint, 'tier0saas1')
+          bucket = oss2.Bucket(auth, 'https://' + endpoint, 'tier0saas')
           
           for root, dirs, files in os.walk('./build'):
               for file in files:
