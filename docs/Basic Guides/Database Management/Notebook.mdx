@@ -36,8 +36,8 @@ Tier0 adopts Marimo for easy python script usage. For example, you can train mod
     </tr>
     <tr>
       <td>4</td>
-      <td>Operations</td>
-      <td>Search for notebooks, and import notebooks.</td>
+      <td>Import</td>
+      <td>Import notebooks.</td>
     </tr>
   </tbody>
 </table>
@@ -54,29 +54,65 @@ Tier0 adopts Marimo for easy python script usage. For example, you can train mod
 5. Enter the notebook information and click **Create**.
 6. Click the created notebook on the right side, and start editing.
 
-<img width={650} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/37.png" />
+<img width={550} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/37.png" />
 
+<table>
+  <thead>
+    <tr>
+      <th>No.</th>
+      <th>Item</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Category</td>
+      <td>Displays notebook hierarchy, data sources and dependency packages.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Canvas</td>
+      <td>Lists cells in the notebook. You can select to create different types of cells, shutdown the notebook and change its settings.</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Tool Bar</td>
+      <td>Refreshes cells and save the notebook to different versions.</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Operations</td>
+      <td>Save the notebook. change current viewer style between cells & result, and pure result. Stop/run all cells.</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Using Notebook to Run SQL Queries
 
 1. Log in to Tier0, and then select **Notebook**.
 
-2. Click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/165.png" /> to run the first cell.
+2. Enter the added notebook, and run the default cell to connect Tier0 namespace as data sources.
 
-<img width={750} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/166.png" />
+<img width={550} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/37-1.png" />
 
-3. Click **SQL** to add a new cell, and then select a connected database to run SQL statements.
+3. Add a cell, write `import marimo as mo`, and run it.
 
-<img width={750} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/167.png" />
-
-:::tip
-- If no database is connected, click **Explore data sources** on the left panel to connect a database first.
-- It can happen that certain packages are missing while connecting to some types of databases. In this case, click **Manage packages** on the left to install.
-:::
+<img width={550} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/37-2.png" />
 
 4. Find the table you need on the left, click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/170.png" /> next to the table name to generate SQL statements automatically.
 
-<img width={650} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/168.png" />
+<img width={550} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/37-5.png" />
+
+:::tip
+- You can click <img src="http://tier0saas1.oss-cn-hangzhou.aliyuncs.com/37-4.png" /> under **DATA SOURCES** on the left to add sources as needed.
+- It can happen that certain packages are missing while connecting to some types of databases. In this case, click **Manage packages** on the left to install.
+:::
+
+5. (optional) Click **SQL** to add a new cell, and then select a connected database to run SQL statements.
+
+<img width={550} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/37-3.png" />
+
 
 
 ## Using Notebook to Draw Charts

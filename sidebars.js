@@ -106,7 +106,7 @@ const sidebars = {
               // 'Basic Guides/Database Management/Data Source Management',
               // 'Basic Guides/Database Management/SQL Editor',
               'Basic Guides/Database Management/Notebook',
-              'Basic Guides/App/Model Engine',
+              'Basic Guides/App/Anchor',
 
             ]
             },
