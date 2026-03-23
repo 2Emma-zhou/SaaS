@@ -31,53 +31,53 @@ jobs:
           OSS_ACCESS_KEY_SECRET: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
           OSS_BUCKET: ${{ secrets.OSS_BUCKET }}
           OSS_REGION: ${{ secrets.OSS_REGION }}
-        run: |
-          # Fix region format for endpoint
-          ENDPOINT="oss-${OSS_REGION}.aliyuncs.com"
-          
-          # Generate date
-          DATE=$(date -u -R)
-          
-          # Upload each file
-          while IFS= read -r -d '' file; do
-            # URL encode the filename
-            FILENAME=$(python3 -c "import urllib.parse; print(urllib.parse.quote('${file#./build/}'))")
-            echo "Uploading $FILENAME..."
-            
-            # Generate signature (use URL encoded path)
-            STRING_TO_SIGN="PUT\n\napplication/octet-stream\n${DATE}\n/${OSS_BUCKET}/${FILENAME}"
-            SIGNATURE=$(echo -en "$STRING_TO_SIGN" | openssl dgst -sha1 -hmac "$OSS_ACCESS_KEY_SECRET" | sed 's/^.*= //')
-            
-            # Use python to upload to handle special characters
-            python3 << PYEOF
+        run: python3 << 'EOF'
 import os
 import subprocess
 import urllib.parse
+from datetime import datetime
 
-file_path = "$file"
-filename = "$FILENAME"
+access_key_id = os.environ['OSS_ACCESS_KEY_ID']
+access_key_secret = os.environ['OSS_ACCESS_KEY_SECRET']
+bucket_name = os.environ['OSS_BUCKET']
+region = os.environ['OSS_REGION']
 
-# Get signature from shell
-result = subprocess.run(
-    ['bash', '-c', 'echo -en "PUT\\n\\napplication/octet-stream\\n${DATE}\\n/${OSS_BUCKET}/${FILENAME}" | openssl dgst -sha1 -hmac "$OSS_ACCESS_KEY_SECRET" | sed "s/^.*= //"'],
-    capture_output=True, text=True
-)
-signature = result.stdout.strip()
+endpoint = f"oss-{region}.aliyuncs.com"
+date_str = datetime.utcnow().strftime('%a, %d %b %Y %H:%M:%S GMT')
 
-# Upload via curl
-url = f"https://$OSS_BUCKET.$ENDPOINT/{filename}"
-cmd = [
-    'curl', '-X', 'PUT', '-T', file_path,
-    '-H', f'Date: $DATE',
-    '-H', 'Content-Type: application/octet-stream',
-    '-H', f'Authorization: OSS $OSS_ACCESS_KEY_ID:{signature}',
-    url, '-f', '-s'
-]
-result = subprocess.run(cmd)
-if result.returncode == 0:
-    print(f"Uploaded: {filename}")
-else:
-    print(f"Failed: {filename}, code: {result.returncode}")
-PYEOF
-          done < <(find ./build -type f -print0)
-          echo "Done!"
+print(f"Bucket: {bucket_name}")
+print(f"Endpoint: {endpoint}")
+
+# Walk through build directory
+for root, dirs, files in os.walk('./build'):
+    for file in files:
+        file_path = os.path.join(root, file)
+        oss_path = file_path.replace('./build/', '').lstrip('/')
+        oss_path_encoded = urllib.parse.quote(oss_path)
+        
+        # Generate signature
+        string_to_sign = f"PUT\n\napplication/octet-stream\n{date_str}\n/{bucket_name}/{oss_path_encoded}"
+        result = subprocess.run(
+            ['openssl', 'dgst', '-sha1', '-hmac', access_key_secret],
+            input=string_to_sign.encode(),
+            capture_output=True
+        )
+        signature = result.stdout.decode().strip().split(' ')[-1]
+        
+        # Upload via curl
+        url = f"https://{bucket_name}.{endpoint}/{oss_path_encoded}"
+        cmd = [
+            'curl', '-X', 'PUT', '-T', file_path,
+            '-H', f'Date: {date_str}',
+            '-H', 'Content-Type: application/octet-stream',
+            '-H', f'Authorization: OSS {access_key_id}:{signature}',
+            url, '-f', '-s'
+        ]
+        result = subprocess.run(cmd)
+        if result.returncode == 0:
+            print(f"Uploaded: {oss_path}")
+        else:
+            print(f"Failed: {oss_path}, code: {result.returncode}")
+
+print("Done!")
+EOF
