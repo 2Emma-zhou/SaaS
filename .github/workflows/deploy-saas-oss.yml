@@ -35,6 +35,9 @@ jobs:
           # Fix region format for endpoint
           ENDPOINT="oss-${OSS_REGION}.aliyuncs.com"
           
+          # Also fix endpoint in env for python
+          echo "ENDPOINT=$ENDPOINT" >> $GITHUB_ENV
+          
           # Generate date
           DATE=$(date -u -R)
           
