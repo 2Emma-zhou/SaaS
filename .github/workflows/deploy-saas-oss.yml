@@ -36,3 +36,4 @@ jobs:
       - name: Upload to OSS
         run: |
           aliyun oss cp -r ./build/ oss://tier0saas1/ --force
+
