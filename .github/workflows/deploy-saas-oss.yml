@@ -29,8 +29,8 @@ jobs:
         env:
           OSS_ACCESS_KEY_ID: ${{ secrets.OSS_ACCESS_KEY_ID }}
           OSS_ACCESS_KEY_SECRET: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
-          OSS_BUCKET: ${{ secrets.OSS_BUCKET }}
-          OSS_REGION: ${{ secrets.OSS_REGION }}
+          OSS_BUCKET: tier0saas
+          OSS_REGION: oss-cn-hangzhou
         run: python3 << 'EOF'
 import os
 import subprocess
@@ -42,16 +42,17 @@ access_key_secret = os.environ['OSS_ACCESS_KEY_SECRET']
 bucket_name = os.environ['OSS_BUCKET']
 region = os.environ['OSS_REGION']
 
-endpoint = f"oss-{region}.aliyuncs.com"
+endpoint = f"{region}.aliyuncs.com"
 date_str = datetime.utcnow().strftime('%a, %d %b %Y %H:%M:%S GMT')
 
 print(f"Bucket: {bucket_name}")
 print(f"Endpoint: {endpoint}")
 
-# Walk through build directory
+# Walk through build directory and upload all files to bucket root
 for root, dirs, files in os.walk('./build'):
     for file in files:
         file_path = os.path.join(root, file)
+        # Get relative path from build folder, upload to bucket root
         oss_path = file_path.replace('./build/', '').lstrip('/')
         oss_path_encoded = urllib.parse.quote(oss_path)
         
