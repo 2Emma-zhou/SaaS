@@ -2,32 +2,71 @@
 sidebar_position: 1
 slug: /
 hide_title: true
-sidebar_label: What is Tier0?
+sidebar_label: What is Tier0 Cloud?
 ---
 
-## Concept
-Tier0 is an open-source industrial data integration platform built on the Unified Namespace (UNS) methodology, aiming to break data silos and data spaghetti, eventually build a single source of truth.
+## What Is Tier0 Cloud?
 
-<img width={550} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/54.png" />
+Tier0 is a Unified Namespace (UNS)-based industrial data platform.
+
+It connects data through Node-RED, organizes it into a unified structure, and makes it available for applications and analytics.
+
+---
+
+## How It Works?
+
+Tier0 moves and structures data in a single workflow:
+
+- Node-RED connects and processes data from devices and systems  
+- Data is published into the Unified Namespace (UNS), structured and stored in Tier0 database
+- Data is consumed by dashboards, applications and analytics  
+
+<img width={550} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/191.png" />
+
+---
+
+## Key Components
+
+### Unified Namespace (UNS)
+Defines a hierarchical structure for all industrial data.
+
+`factory/workshopA/line1/cnc01/telemetry/spindleSpeed`
 
 
-## Architecture
+<img width={650} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/192.png" />
 
-<img width={750} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/55.png" />
+### Node-RED Integration
+The core engine for data connection and processing.
 
-#### Source Flow
-Node-RED as core, serves as the data collector of Tier0, which is necessary for building a unified namespace.
+- Connect devices, applications, and systems  
+- Format and publish data into the namespace
 
-#### Namespace
-The core of Tier0. Models your data into a folder-file structured tree map. With its embedded MQTT broker, your data is easily recognized and accessed through MQTT topics that exactly follow the data hierarchy.
-:::info
-For example, you have a CNC machine in your factory, workshop A, production line A, and the modeled topic could be `factory/workshopA/productionLineA/CNC`.
-:::
+<img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/193.png" />
 
-#### Sink
-The storage layer of Tier0, which enables efficient data querying and compression.
-- TSDB is for real-time operational metrics.
-- S3 is the system of record for all historical and analytical data.
+---
 
-#### Event Flow
-Node-RED as core, completes event-driven data flows.
+### Grafana Dashboards
+Visualize industrial data in real time.
+
+- Build dashboards for monitoring and insights  
+- Connect directly to platform data  
+- Support time-series visualization and analysis  
+
+<img width={550} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/194.png" />
+
+---
+
+### Python Notebook
+Analyze data with full flexibility using Python with an interactive environment.
+
+<img width={550} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/195.png" />
+
+---
+
+### Agentic App Builder
+Create industrial applications using natural language and manage them right on the cloud.
+
+<img width={450} src="http://enterpriseimage.oss-cn-hangzhou.aliyuncs.com/3.png" />
+
+---
+

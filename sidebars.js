@@ -29,6 +29,7 @@ const sidebars = {
             items: [
               'Introduction',
               // 'What Can Tier0 Do',
+              'Feature List',
               'Basic Guides/UNS Data Integration/User Journey',
               
             ]
