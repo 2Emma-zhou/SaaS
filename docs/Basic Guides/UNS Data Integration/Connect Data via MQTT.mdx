@@ -4,7 +4,7 @@ hide_title: true
 ---
 
 ## How to Connect MQTT Clients via Authentication
-Tier0 offers an embedded MQTT broker that allows third-party clients to connect and publish data to/subscribe data from **UNS**.
+Tier0 offers an embedded MQTT broker that allows third-party clients to connect and publish data to/subscribe to data from **UNS**.
 
 1. Log in to Tier0, select **Connectivity**.
 
@@ -49,10 +49,10 @@ Make a note of the generated **Client ID**, **Username**, and **Password**. You 
 :::
 
 5. Install an MQTT client, such as MQTTX, MQTT Explorer and others.
-5. Add a new connection in the MQTT client with the authentication information from Tier0.
+6. Add a new connection in the MQTT client with the authentication information from Tier0.
 
 :::note
-3 types of client connection are listed as examples below.
+3 client types are listed below as examples.
 :::
 
 <div className="doc-indent">
@@ -77,9 +77,9 @@ Make a note of the generated **Client ID**, **Username**, and **Password**. You 
 
 3. Click **BACK** and then **CONNECT**.
 
-- **NodeRed**
+- **Node-RED**
 
-1. Open your NodeRed instance, double-click the `mqtt in` node.
+1. Open your Node-RED instance, double-click the `mqtt in` node.
 2. Add a new MQTT broker with the authentication information from Tier0.
 
 <img width={350} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/20-3.png" />
@@ -87,9 +87,9 @@ Make a note of the generated **Client ID**, **Username**, and **Password**. You 
 
 </div>
 
-6. Go back to the **Connectivity** page on Tier0, click **Clients** tab and see whether the client is connected.
-7. Copy the topic of the data model under **UNS**, and publish a message to it on the client.
+7. Go back to the **Connectivity** page on Tier0, click the **Clients** tab and check whether the client is connected.
+8. Copy the topic of the data model under **UNS**, and publish a message to it on the client.
 
 <img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/21.png" />
 
-8. Go back to **UNS**, check whether the data is received under the target topic.
+9. Go back to **UNS**, check whether the data has been received under the target topic.
