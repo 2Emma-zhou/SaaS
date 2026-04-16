@@ -2,10 +2,10 @@
 sidebar_position: 1
 slug: /
 hide_title: true
-sidebar_label: What is Tier0 Cloud?
+sidebar_label: What is Tier0?
 ---
 
-## What Is Tier0 Cloud?
+## What Is Tier0?
 
 Tier0 is a Unified Namespace (UNS)-based industrial data platform.
 
@@ -19,7 +19,7 @@ Tier0 moves and structures data in a single workflow:
 
 - Node-RED connects and processes data from devices and systems  
 - Data is published into the Unified Namespace (UNS), structured and stored in Tier0 database
-- Data is consumed by dashboards, applications and analytics  
+- Data is consumed by digital twin models, applications and analytics  
 
 <img width={550} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/191.png" />
 
@@ -45,16 +45,6 @@ The core engine for data connection and processing.
 
 ---
 
-### Grafana Dashboards
-Visualize industrial data in real time.
-
-- Build dashboards for monitoring and insights  
-- Connect directly to platform data  
-- Support time-series visualization and analysis  
-
-<img width={550} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/194.png" />
-
----
 
 ### Python Notebook
 Analyze data with full flexibility using Python with an interactive environment.
@@ -66,7 +56,7 @@ Analyze data with full flexibility using Python with an interactive environment.
 ### Agentic App Builder
 Create industrial applications using natural language and manage them right on the cloud.
 
-<img width={450} src="http://enterpriseimage.oss-cn-hangzhou.aliyuncs.com/3.png" />
+<img width={550} src="http://tier0saas1.oss-cn-hangzhou.aliyuncs.com/74.png" />
 
 ---
 

@@ -33,6 +33,11 @@
                 <td>General Settings</td>
                 <td>Help documentation, notifications, and system settings.</td>
             </tr>
+            <tr>
+                <td>5</td>
+                <td>Plan Info</td>
+                <td>Displays the current plan and the remaining date till expiration.</td>
+            </tr>
         </tbody>
     </table>
 
@@ -48,37 +53,42 @@
         <tbody>
             <tr>
                 <td rowspan="3">Unified Namesapce</td>
-                <td>Connectivity</td>
-                <td>Generates authentication for third-party clients to connect to the platform and monitor their connections.</td>
+                <td><a href="Basic Guides/UNS Data Integration/Connect Data via MQTT">Connectivity</a></td>
+                <td>Generates authentication credentialsfor third-parties to connect to the platform through MQTT.</td>
             </tr>
             <tr>
-                <td>UNS</td>
+                <td><a href="Basic Guides/UNS Data Integration/Build Data Models">UNS</a></td>
                 <td>Builds data models for subsequent data integration and usage.</td>
             </tr>
             <tr>
                 <td>Flows</td>
-                <td>Customizes data flows using NodeRed, integrating both <b>Source Flow</b> and <b>Event Flow</b> modules.</td>
+                <td>Customizes data flows using NodeRed, integrating both <a href="Basic Guides/UNS Data Integration/Connect Data via Flows"><b>Source Flow</b></a> and <a href="Basic Guides/UNS Data Integration/Process Data"><b>Event Flow</b></a> modules to cover data connection and processing respectively.</td>
             </tr>
             <tr>
-                <td rowspan="4">App</td>
+                <td rowspan="3"><a href="Basic Guides/App/Build Applications">App</a></td>
                 <td>Builder</td>
-                <td>Use LLM to create applications.</td>
+                <td>Use LLM to create applications via natural language.</td>
             </tr>
             <tr>
                 <td>Projects</td>
-                <td>Manages custom applications.</td>
+                <td>Manages applications built on <b>Builder</b>.</td>
             </tr>
             <tr>
                 <td>Launchpad</td>
-                <td>Third-party applications.</td>
+                <td>Displays all applications you built through natural language, tested and deployed for future use.</td>
             </tr>
             <tr>
-                <td>Anchor</td>
-                <td>Digital twin that connects with UNS.</td>
+            <td rowspan="2">Anchor</td>
+                <td><a href="../Basic Guides/App/Anchor">Model Library</a></td>
+                <td>Digital twin models that connect with UNS.</td>
+            </tr>
+            <tr>
+                <td><a href="../Basic Guides/App/Scene">Scene</a></td>
+                <td>Scenes where you can visualize and interact with your digital twins models.</td>
             </tr>
             <tr>
                 <td>Data Analysis</td>
-                <td>Notebook</td>
+                <td><a href="../Basic Guides/Database Management/Notebook">Notebook</a></td>
                 <td>Adopts Marimo for easy python script usage. For example, train models, run SQL queries and others.</td>
             </tr>
         </tbody>

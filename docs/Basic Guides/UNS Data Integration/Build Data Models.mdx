@@ -1,11 +1,16 @@
+---
+sidebar_label: Build Data Models (UNS)
+hide_title: true
+---
+
 Tier0 uses UNS (Unified Namespace) to organize data into a clear tree structure. Each path and topic in the model automatically generates an MQTT topic, making it easy to get real-time data.
 
 ## Things to Notice before Start
 
 ### Page Overview
-Select UNS > Namespace after logging in to Tier0, you will see the main page of this module.
+Select **Unified Namespace** > **UNS** after logging in to Tier0, you will see the main page of this module.
 
-<img width={650} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/5.png" />
+<img width={550} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/5.png" />
 
 <table>
   <thead>
@@ -17,42 +22,48 @@ Select UNS > Namespace after logging in to Tier0, you will see the main page of 
   </thead>
   <tbody>
     <tr>
-      <td rowspan="3">1</td>
+      <td>1</td>
       <td>Namespace</td>
       <td>Displays data models in different ways, including directly by namespace structure, by template and by label.</td>
     </tr>
+    
     <tr>
-      <td>Search</td>
-      <td>Enter keywords to search for paths and topics.</td>
+      <td rowspan="3">2</td>
+      <td><img width={20} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/104.png" /></td>
+      <td>Use a draft to test and change the namespace models before building on the platform.</td>
+    </tr>
+    <tr>
+      <td><img width={50} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/101.png" /></td>
+      <td>Import/export namespace models in JSON text or file.</td>
     </tr>
     <tr>
       <td><img src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/6.png" /></td>
       <td>Add path/topic.</td>
     </tr>
     <tr>
-      <td>2</td>
+      <td rowspan="2">3</td>
+      <td>Search</td>
+      <td>Enter keywords to search for paths and topics.</td>
+    </tr>
+    <tr>
       <td>Model List</td>
       <td>Displays data models by the selected category.</td>
     </tr>
     <tr>
-      <td>3</td>
+      <td>4</td>
       <td>Recycle Bin</td>
       <td>Lists the deleted data models.</td>
     </tr>
     <tr>
-      <td>4</td>
-      <td>Overview</td>
-      <td>Quick start guide, and the internal MQTT broker messages. Details of the selected namespace.</td>
-    </tr>
-    <tr>
-      <td rowspan="2">5</td>
-      <td>Create Draft</td>
-      <td>Use a draft to test and change the namespace models before building on the platform.</td>
-    </tr>
-    <tr>
-      <td>Import/Export</td>
-      <td>Import/export namespace models in JSON text or file.</td>
-    </tr>
+      <td>5</td>
+      <td>Canvas</td>
+      <td>Displays selected UNS information or modules generated through the chat on the right.</td>
+      </tr>
+      <tr>
+      <td>6</td>
+      <td>Chat</td>
+      <td>Use natural language to interact with UNS topics, and the flow generated from the chat will be displayed on the canvas.</td>
+      </tr>
   </tbody>
 </table>
 
@@ -132,7 +143,7 @@ Select UNS > Namespace after logging in to Tier0, you will see the main page of 
 <td>Inherit attributes from the selected template.</td>
 </tr>
 <tr>
-<td><strong>Auto-Parsing</strong></td>
+<td><strong>Auto Parsing</strong></td>
 <td>Use JSON text to generate attributes with the same structure.</td>
 </tr>
 </tbody>
@@ -150,7 +161,7 @@ Select UNS > Namespace after logging in to Tier0, you will see the main page of 
   <tbody>
   <tr>
       <td><strong>Use mock data</strong></td>
-      <td>Generates a data flow with mock data in <strong>UNS</strong> &gt; <strong>Source Flow</strong>.</td>
+      <td>Generates a data flow with mock data in <strong>Unified Namespace</strong> &gt; <strong>Flows</strong> > <b>Source Flow</b>.</td>
     </tr>
     <tr>
       <td><strong>Enable History</strong></td>
@@ -170,29 +181,29 @@ Based on simple folder-file structure, you can define the data hierarchy to a tr
 1. Log in to Tier0, and then select **UNS**.
 2. Select <img src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/6.png" /> > **New Path** to add a path (e.g. `factory`).
 
-<img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/7.png" />
+<img width={350} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/7.png" />
 
 :::note
-Add **Custom Properties** as needed, e.g. **Unit**.
+Add **Custom Attributes** as needed, e.g. **Unit**.
 :::
 
 3. Select **equipment**, and then click <img src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/6.png" /> > **New Topic** to add a topic (e.g.`CNC`) under it.
 
-<img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/8.png" />
+<img width={350} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/8.png" />
 
 4. Enter the information of the topic:
 
 <ol>
 <ol>
 <li>Select <b>Type</b> among <b>State</b>, <b>Action</b>, or <b>Metric</b>.</li>
-<li>Select whether to enable <b>Use mock data</b> and <b>Enable History</b>.</li>
+<li>Select whether to enable <b>Mock Data</b> and <b>Enable History</b>.</li>
 <li>Click <img src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/9.png" /> and then add attributes to the topic.</li>
 </ol>
 </ol>
 
 5. Click **Create**.
 
-<img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/10.png" />
+<img width={350} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/10.png" />
 
 {/* ### Generating Models through JSON
 1. Log in to Tier0, and then select **UNS** > **Namespace**.
@@ -249,10 +260,7 @@ Click on each data level, you can change its information and add attributes on t
 
 ### Importing Models
 1. Log in to Tier0, and then select **UNS**.
-2. Click **Import** at the upper-right corner.
-
-<img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/12.png" />
-
+2. Click <img width={20} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/102.png" /> at the upper-left corner.
 3. Import JSON to create models.
 - Directly enter JSON.
 
@@ -264,14 +272,14 @@ Click on each data level, you can change its information and add attributes on t
     <img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/13.png" />
 
     :::tip
-    You can manually add a path and topic, export it and use it as an example for import.
+    You can manually add a path and topic, click <img width={20} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/103.png" /> to export it and use it as an example for import.
 
     <img width={350} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/14.png" />
 
     :::
     2. Save the template file, switch to **File** tab on the import window, and upload the file.
 
-    <img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/14-1.png" />
+    <img width={350} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/14-1.png" />
 
 4. Click **Submit**.
 

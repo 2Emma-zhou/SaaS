@@ -29,24 +29,24 @@ const sidebars = {
             items: [
               'Introduction',
               // 'What Can Tier0 Do',
-              'Feature List',
+              'Getting Started/Homepage',
               'Basic Guides/UNS Data Integration/User Journey',
               
             ]
             },
-            {
-      type: 'category', 
-      label: 'Quick Start Guide',
-      link: {
-        type: 'generated-index',
-        description: 'This section guides you through the initial setup and configuration of Tier0.',
-    },
-        items: [
-          // 'Getting Started/Deploy Tier0',
-            'Getting Started/Login',
-            'Getting Started/Homepage',
-        ]
-        },
+    //         {
+    //   type: 'category', 
+    //   label: 'Quick Start Guide',
+    //   link: {
+    //     type: 'generated-index',
+    //     description: 'This section guides you through the initial setup and configuration of Tier0.',
+    // },
+    //     items: [
+    //       // 'Getting Started/Deploy Tier0',
+            
+            
+    //     ]
+    //     },
             
             {
           type: 'category', 
@@ -56,15 +56,12 @@ const sidebars = {
             description: 'This section provides guides on how to build data models, and use them in Tier0.',
         },
             items: [
+              'Getting Started/Login',
               'Basic Guides/UNS Data Integration/Build Data Models',
               'Basic Guides/UNS Data Integration/Edit UNS Models',
+              'Basic Guides/UNS Data Integration/Talk to UNS Models',
               'Basic Guides/UNS Data Integration/Connect Data via Flow',
-              'Basic Guides/UNS Data Integration/Connect Data via MQTT',
-            'Basic Guides/UNS Data Integration/Process Data',
-            
-            'Basic Guides/UNS Data Integration/Visualize Data',
-            // 'Basic Guides/UNS Data Integration/Obtain Data from Tier0',
-            {
+              {
           type: 'category', 
           label: 'Common Data Sources',
           link: {
@@ -80,6 +77,8 @@ const sidebars = {
               'Basic Guides/UNS Data Integration/Common Data Sources/Connecting RestAPI',
             ]
             },
+             
+            'Basic Guides/UNS Data Integration/Process Data',
             {
           type: 'category', 
           label: 'Common Data Processing Methods',
@@ -95,6 +94,11 @@ const sidebars = {
 
             ]
             },
+             'Basic Guides/UNS Data Integration/Connect Data via MQTT',
+            // 'Basic Guides/UNS Data Integration/Visualize Data',
+            // 'Basic Guides/UNS Data Integration/Obtain Data from Tier0',
+            
+            
             ]
           },
           {
@@ -107,8 +111,9 @@ const sidebars = {
               // 'Basic Guides/Database Management/Data Source Management',
               // 'Basic Guides/Database Management/SQL Editor',
               'Basic Guides/Database Management/Notebook',
+              'Basic Guides/App/Build Applications',
               'Basic Guides/App/Anchor',
-
+              'Basic Guides/App/Scene',
             ]
             },
             {
@@ -128,8 +133,6 @@ const sidebars = {
               // 'Basic Guides/System Management/I18n Management',
               // 'Basic Guides/System Management/Menu Config',
               // 'Basic Guides/System Management/Theme Management',
-
-
             ]
             },
             
