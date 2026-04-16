@@ -3,6 +3,14 @@ sidebar_label: Connect MQTT Clients (Connectivity)
 hide_title: true
 ---
 
+:::info What is MQTT?
+- MQTT is a lightweight real-time messaging protocol that lets connected devices (clients) send data to a central server (broker) and receive updates immediately.
+- Access control can be added on the central server (broker) for security reasons, so devices (clients) must be authenticated before they can connect.
+- For more details about MQTT, please refer to [MQTT Protocol](https://mqtt.org/).
+
+<img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/111.png" />
+
+:::
 ## How to Connect MQTT Clients via Authentication
 Tier0 offers an embedded MQTT broker that allows third-party clients to connect and publish data to/subscribe to data from **UNS**.
 
@@ -45,19 +53,17 @@ Tier0 offers an embedded MQTT broker that allows third-party clients to connect 
 <img width={350} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/19.png" />
 
 :::info
-Make a note of the generated **Client ID**, **Username**, and **Password**. You will need them to configure the MQTT client.
+- Make a note of the generated **Client ID**, **Username**, and **Password**. You will need them to configure the MQTT client.
+- The following clients are used as examples to show how to use the authentication to connect to the internal MQTT broker.
 :::
 
 5. Install an MQTT client, such as MQTTX, MQTT Explorer and others.
 6. Add a new connection in the MQTT client with the authentication information from Tier0.
 
-:::note
-3 client types are listed below as examples.
-:::
 
 <div className="doc-indent">
 
-- **MQTTX**
+- **<a href="https://mqttx.app/" target="_blank" rel="noopener noreferrer">MQTTX</a>**
 
 1. Add a new connection in MQTTX with the authentication information from Tier0.
 
@@ -65,7 +71,7 @@ Make a note of the generated **Client ID**, **Username**, and **Password**. You 
 
 2. Click **Connect**.
 
-- **MQTT Explorer**
+- **<a href="https://mqtt-explorer.com/" target="_blank" rel="noopener noreferrer">MQTT Explorer</a>**
 
 1. Add a new connection in MQTT Explorer with the username and password.
 
