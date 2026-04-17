@@ -47,16 +47,23 @@ The core engine for data connection and processing.
 
 
 ### Python Notebook
-Analyze data with full flexibility using Python with an interactive environment.
+Analyzes data with full flexibility using Python with an interactive environment.
 
 <img width={550} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/195.png" />
 
 ---
 
 ### Agentic App Builder
-Create industrial applications using natural language and manage them right on the cloud.
+Creates industrial applications using natural language and manage them right on the cloud.
 
 <img width={550} src="http://tier0saas1.oss-cn-hangzhou.aliyuncs.com/74.png" />
+
+---
+
+### Digital Twin
+Builds digital twin scenes with 3D models that are connected with UNS data and move along when data changes.
+
+<img width={550} src="http://tier0saas1.oss-cn-hangzhou.aliyuncs.com/124.png" />
 
 ---
 
