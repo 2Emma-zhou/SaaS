@@ -7,11 +7,18 @@ hide_title: true
 Tier0 enables you to build applications simply by talking to an LLM in natural language, and manage them in one place.
 
 1. Log in to Tier0, and select **App** > **Projects**.
+:::info
+A starter project is available for you to experience the application building process.
+:::
 2. Click **Create Project**, enter the project name and description, select an industry and click **Create**.
 
     <img width={550} src="http://tier0saas1.oss-cn-hangzhou.aliyuncs.com/75.png" />
 
-3. Go to **Builder**, define your application, and start building.
+3. Open the project, click **Create App**, and you will be redirected to the app building page.
+
+    <img width={550} src="http://tier0saas1.oss-cn-hangzhou.aliyuncs.com/113.png" />
+
+4. Define the application, and start building it.
     1. Click **Type of App**, select the type you want from the drop-down list.
         
         <img width={550} src="http://tier0saas1.oss-cn-hangzhou.aliyuncs.com/76.png" />
@@ -20,22 +27,105 @@ Tier0 enables you to build applications simply by talking to an LLM in natural l
 
         <img width={550} src="http://tier0saas1.oss-cn-hangzhou.aliyuncs.com/77.png" />
     
-    3. Click <img width={20} src="http://tier0saas1.oss-cn-hangzhou.aliyuncs.com/78.png" /> to start building the application.
-
-        <img width={650} src="http://tier0saas1.oss-cn-hangzhou.aliyuncs.com/79.png" />
+    3. Click <img width={20} src="http://tier0saas1.oss-cn-hangzhou.aliyuncs.com/78.png" />.
 
  :::info
  - Click the project name at the lower-left corner of the dialog window to switch between projects, or create new projects.
  - Click **Build** at the lower-right corner to switch the building mode between **Build** and **Design**.
     - **Build**: Data in the application is connected to the Tier0 database.
-    - **Design**: Data in the application is stored in **LocalStorage** of the browser, which is for testing and preview.
+    - **Design**: Data in the application is stored in **LocalStorage** of the browser, which is for testing and design preview.
 
 <img width={450} src="http://tier0saas1.oss-cn-hangzhou.aliyuncs.com/80.png" />
 
 :::
+5. Do follow-up configurations of the application during initial building, so it fits your needs better.
 
-4. Fine-tune your application by talking to the LLM after the initial build, and click **Deploy** at the upper-right corner to complete building the application.
+    1. Confirm the basic application settings, and click **Continue**.
 
-<img width={450} src="http://tier0saas1.oss-cn-hangzhou.aliyuncs.com/81.png" />
+        <img width={350} src="http://tier0saas1.oss-cn-hangzhou.aliyuncs.com/114.png" />
 
-5. Go to **Launchpad**, you can see the application you just deployed. Click the application to open it.
+    2. Check the generated requirement document, including the application structure, roles and permissions, data models, UI design and more.
+
+        <img width={550} src="http://tier0saas1.oss-cn-hangzhou.aliyuncs.com/115.png" />
+
+    3. Click **Confirm** to start building the application.
+    4. Once the application is built, check the preview of the application, and click **Deploy Now** on the dialog.
+
+        <img width={550} src="http://tier0saas1.oss-cn-hangzhou.aliyuncs.com/116.png" />
+
+:::tip
+You can always change the application configurations by talking to the LLM while building.
+:::
+6. Fine-tune your application by talking to the LLM after the initial build, and click **Deploy** at the upper-right corner to complete building the application.
+
+<img width={550} src="http://tier0saas1.oss-cn-hangzhou.aliyuncs.com/117.png" />
+
+:::info what else you can do about the application
+- Click <img width={20} src="http://tier0saas1.oss-cn-hangzhou.aliyuncs.com/119.png" /> to download the installation package of the application.
+- Click **Snapshot** to create a snapshot of the application, which can be used to restore the application to a previous state when needed.
+:::
+
+7. Go to **Projects**, click the application you just built.
+
+<img width={550} src="http://tier0saas1.oss-cn-hangzhou.aliyuncs.com/120.png" />
+<table>
+  <thead>
+    <tr>
+      <th>No.</th>
+      <th>Item</th>
+      <th>Module</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Application Information</td>
+      <td colspan="2">Application namespace, type and feature.</td>
+    </tr>
+    <tr>
+      <td rowspan="4">2</td>
+      <td rowspan="4">Operations</td>
+      <td><img width={20} src="http://tier0saas1.oss-cn-hangzhou.aliyuncs.com/121.png" /></td>
+      <td>Add the application to Favorites.</td>
+    </tr>
+    <tr>
+    <td><img width={20} src="http://tier0saas1.oss-cn-hangzhou.aliyuncs.com/119.png" /></td>
+    <td>Share the application link or archive it for future use.</td>
+    </tr>
+    <tr>
+    <td>Launch</td>
+    <td>Launch the application to <b>Launchpad</b> for workspace member access.</td>
+    </tr>
+    <tr>
+    <td>Edit App</td>
+    <td>Go back to the application building interface, and talk to the LLM to edit it.</td>
+    </tr>
+    <tr>
+      <td rowspan="3">3</td>
+      <td rowspan="3">Application Details</td>
+      <td>Version</td>
+      <td>Application version list.</td>
+    </tr>
+    <tr>
+    <td>Deployment</td>
+    <td>Deployment details of each version of the application.</td>
+    </tr>
+    <tr>
+    <td>Database</td>
+    <td>Database tables generated during application building in <b>Build</b> mode.</td>
+    </tr>
+  </tbody>
+</table>
+
+7. Click **Launch**, and you can see the application you just deployed.
+
+<img width={550} src="http://tier0saas1.oss-cn-hangzhou.aliyuncs.com/122.png" />
+
+:::info what else you can do
+Click **Switch App**, you can select all launched applications to view.
+:::
+
+8. Go to **Launchpad**, click the application you launched and use it.
+
+<img width={550} src="http://tier0saas1.oss-cn-hangzhou.aliyuncs.com/123.png" />
