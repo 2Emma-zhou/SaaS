@@ -31,6 +31,7 @@ const sidebars = {
               // 'What Can Tier0 Do',
               'Getting Started/Homepage',
               'Basic Guides/UNS Data Integration/User Journey',
+              'Getting Started/Access Control Overview',
               
             ]
             },
@@ -110,10 +111,11 @@ const sidebars = {
             items: [
               // 'Basic Guides/Database Management/Data Source Management',
               // 'Basic Guides/Database Management/SQL Editor',
-              'Basic Guides/Database Management/Notebook',
+              'Basic Guides/Database Management/Analyze Data',
               'Basic Guides/App/Build Applications',
               'Basic Guides/App/Anchor',
               'Basic Guides/App/Scene',
+              'Basic Guides/System Management/Audit Log',
             ]
             },
             {

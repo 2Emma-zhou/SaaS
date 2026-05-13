@@ -179,15 +179,6 @@ const config = {
 
   copyright: `
     Copyright © ${new Date().getFullYear()} FreezoneX, Inc.
-    <span>
-      <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备2026005893号-2</a>
-      &nbsp;
-      <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33011302001004" target="_blank">
-        <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/beian.png"
-             style="width:14px;vertical-align:middle;margin-right:4px;" />
-        浙公网安备33011302001019号
-      </a>
-    </span>
   `,
 },
       prism: {

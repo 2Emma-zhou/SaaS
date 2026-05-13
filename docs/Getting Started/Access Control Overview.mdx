@@ -1,0 +1,85 @@
+---
+sidebar_label: Access Control
+title: Access Control
+---
+
+# Access Control
+
+Tier0 adopts Role-Based Access Control (RBAC). Roles are divided into 3 dimensions: Platform roles, project roles, and business roles.
+
+## Platform Roles
+
+Control access to the entire workspace.
+
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Permissions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Owner</td>
+<td>Deletes/transfers the workspace, manages admins and members, basic modifications on the workspace, full access to all features.</td>
+<td>Owns the workspace, highest level of access.</td>
+</tr>
+<tr>
+<td>Admin</td>
+<td>Manages members, basic modifications on the workspace, full access to all features.</td>
+<td>Has administrative privileges within the workspace. Cannot delete or transfer the workspace.</td>
+</tr>
+<tr>
+<td>Member</td>
+<td>Sole access to <b>Launchpad</b>, can leave the workspace.</td>
+<td>Has limited access to the workspace.</td>
+</tr>
+<tr>
+<td>Custom Role</td>
+<td>Access to set features, can leave the workspace.</td>
+<td>Custom access control.</td>
+</tr>
+</tbody>
+</table>
+
+## Project Roles
+
+Control access to projects.
+
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Permissions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Creator</td>
+<td>Creates and manages projects, assigns roles to members.</td>
+<td>Owns the project, has the highest level of access.</td>
+</tr>
+<tr>
+<td>Editor</td>
+<td>Manages the project, assigns roles to members.</td>
+<td>Has editing permissions within the project. Cannot delete the project.</td>
+</tr>
+<tr>
+<td>Operator</td>
+<td>Uses the project.</td>
+<td>Use of the project, cannot edit anything.</td>
+</tr>
+</tbody>
+</table>
+
+## Business Roles
+
+Control access to specific business applications within a project.
+
+Business roles are assigned by the project **Creator** or **Editor** to project **Operators**.
+
+:::info
+Business roles are configured during application buidling.
+:::
