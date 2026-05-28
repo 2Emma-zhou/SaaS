@@ -14,7 +14,7 @@ hide_title: true
 ## How to Connect MQTT Clients via Authentication
 Tier0 offers an embedded MQTT broker that allows third-party clients to connect and publish data to/subscribe to data from **UNS**.
 
-1. Log in to Tier0, select **Connectivity**.
+1. Log in to Tier0, select **Edge**.
 
 <img width={650} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/22.png" />
 
@@ -41,31 +41,30 @@ Tier0 offers an embedded MQTT broker that allows third-party clients to connect 
     <tr>
       <td>3</td>
       <td>Client List</td>
-      <td>Displays the list of connected clients and authentication.</td>
+      <td>Displays the list of connected clients and generated credentials.</td>
     </tr>
   </tbody>
 </table>
 
-3. Click **Auth**.
+3. Click **MQTT Credentials**.
 
-4. Click **Create Auth**, enter the description, and then click **Create**.
+4. Click **New Credentials**, enter the description, and then click **Create**.
 
 <img width={350} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/19.png" />
 
 :::info
 - Make a note of the generated **Client ID**, **Username**, and **Password**. You will need them to configure the MQTT client.
-- The following clients are used as examples to show how to use the authentication to connect to the internal MQTT broker.
+- The following clients are used as examples to show how to use the credentials to connect to the internal MQTT broker.
 :::
 
 5. Install an MQTT client, such as MQTTX, MQTT Explorer and others.
-6. Add a new connection in the MQTT client with the authentication information from Tier0.
-
+6. Use the credentials from Tier0 to connect the client.
 
 <div className="doc-indent">
 
 - **<a href="https://mqttx.app/" target="_blank" rel="noopener noreferrer">MQTTX</a>**
 
-1. Add a new connection in MQTTX with the authentication information from Tier0.
+1. Add a new connection in MQTTX with the generated credentials.
 
 <img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/20.png" />
 
@@ -73,7 +72,7 @@ Tier0 offers an embedded MQTT broker that allows third-party clients to connect 
 
 - **<a href="https://mqtt-explorer.com/" target="_blank" rel="noopener noreferrer">MQTT Explorer</a>**
 
-1. Add a new connection in MQTT Explorer with the username and password.
+1. Add a new connection in MQTT Explorer with the generated credentials.
 
 <img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/20-1.png" />
 
@@ -86,16 +85,16 @@ Tier0 offers an embedded MQTT broker that allows third-party clients to connect 
 - **Node-RED**
 
 1. Open your Node-RED instance, double-click the `mqtt in` node.
-2. Add a new MQTT broker with the authentication information from Tier0.
+2. Add a new MQTT broker with the generated credentials from Tier0.
 
 <img width={350} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/20-3.png" />
 <img width={350} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/20-4.png" />
 
 </div>
 
-7. Go back to the **Connectivity** page on Tier0, click the **Clients** tab and check whether the client is connected.
-8. Copy the topic of the data model under **UNS**, and publish a message to it on the client.
+7. Go back to the **Edge** page on Tier0, click the **Clients** tab and check whether the client is connected.
+8. Copy the topic of the data model under **UNS**, and publish a message to it through the client.
 
-<img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/21.png" />
+  <img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/21.png" />
 
 9. Go back to **UNS**, check whether the data has been received under the target topic.

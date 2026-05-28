@@ -124,11 +124,11 @@ const config = {
           //   position: 'left',
           //   label: 'Use Case',
           // },
-          // {to: '/openapi', label: 'Open API', position: 'left'},
-        //   {
-        //   type: 'localeDropdown',
-        //   position: 'right',
-        // },
+          {to: '/openapi', label: 'Open API', position: 'left'},
+          {
+          type: 'localeDropdown',
+          position: 'right',
+        },
           // {to: '/blog', label: 'Blog', position: 'left'},
         //   {
         //   type: 'localeDropdown',

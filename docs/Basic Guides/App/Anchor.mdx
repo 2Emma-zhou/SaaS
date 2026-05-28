@@ -1,6 +1,6 @@
 ---
-sidebar_label: Build 3D Models (Model Library)
-title: Build 3D Models  
+sidebar_label: Configure 3D Models (Model Library)
+title: Configure 3D Models  
 ---
 
 The digital twin feature is available on the platform to help you visually build data models.
@@ -10,20 +10,20 @@ The digital twin feature is available on the platform to help you visually build
 
 <img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/62.png" />
 
-2. Click <img src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/63.png" />, select a **.glb** model, and upload it to the platform.
+2. Click <img src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/63.png" />, select a model file, and upload it to the platform.
 
 ## Mapping UNS Data to Digital Twin Models
 :::info
 There are 2 types of data mapping with 3D models.
-- Static Mapping: Displays UNS data as a static tag on the scene. Often used in Gaussian Models (no movable parts but in need of data display) or static attributes of structured models (e.g., temperature of AC).
-- Motion Mapping: Data mapped with the movable parts of the model, and the parts move according to the data change.
+- **Static Mapping**: Displays UNS data as a static tag on the scene. Often used in Gaussian Models (no movable parts but in need of data display) or static attributes of structured models (e.g., temperature of AC).
+- **Motion Mapping**: Data mapped to the movable parts of the model, and the parts move according to the data change.
 ::: 
-1. After uploading the model, click the model to start mapping it with UNS data.
-2. Select model nodes to be mapped, and click **Confirm**.
+1. After uploading the model, click the model to start mapping it to UNS data.
+2. Select model nodes to be mapped, and click **OK**.
 
 <img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/67.png" />
 
-3. Click **Create Instance**, select the UNS data model that controls the model animation.
+3. Click **Create Instance**, select the UNS data model that controls the model animation, and then click **Next**.
 
 <img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/68.png" />
 
@@ -33,7 +33,7 @@ There are 2 types of data mapping with 3D models.
 
 ### Motion Mapping
 Bind the UNS data to movable parts of the model.
-1. On the **Model Mapping** tab, click <img width={25} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/82.png" />, and select the position axis of the model to be controlled.
+1. On the **Model Mapping** tab, click <img width={25} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/82.png" />, and select the axis of the model position coordinatesto be mapped.
     
     <img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/83.png" />
 
@@ -41,10 +41,12 @@ Bind the UNS data to movable parts of the model.
 
     <img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/84.png" />
 
+3. Do the same for **Rotation Binding** to determine how the model parts rotate according to the data change.
+
 ### Static Mapping
-Bind the UNS data with the model as a tag.
+Bind the UNS data with the model as a static tag.
 :::info
-Guassian models are only avalable for static mapping, as they have no movable parts.
+Gaussian models are only available for static mapping, as they have no movable parts.
 
 <img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/118.png" />
 
@@ -54,7 +56,7 @@ Guassian models are only avalable for static mapping, as they have no movable pa
 
     <img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/85.png" />
 
-2. Click on the model to select the position of the tag, and configure the tag attributes.
+2. Click on the model to select the point the tag represents, and configure the tag attributes.
 
     <img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/86.png" />
 
@@ -84,15 +86,15 @@ Node mappings are saved automatically.
 :::
 #### On the Model Window
 
-- Drag the slider of **Explosion** at the bottom of the model window to view the model parts.
-- Click <img width={25} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/68-1.png" /> to display the model with live mapped UNS data.
+- Click **Replace Model** at the upper-right corner to replace the model while keeping the mapping settings after analysis.
+- Drag the slider of **Exploded View** at the bottom of the model window to view the model parts.
 - Click <img width={25} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/68-2.png" /> to display the model in its original state.
 - Click <img width={25} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/68-3.png" /> to view the model in full screen.
 
 #### On the Mapping Tab
 
-- Click **Edit Selection** at the upper-right corner to modify selected topics.
-- Click <img src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/70.png" /> to disconnect a model node from the data.
+- Click **Edit Nodes** at the upper-right corner to modify selected nodes.
+- Click <img src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/70.png" /> to disconnect a model node from the instance.
 - Click <img src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/6.png" /> to add payload to UNS topics for quick mapping with new data.
 
 <img width={350} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/71.png" />

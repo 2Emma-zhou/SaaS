@@ -1,0 +1,110 @@
+---
+title: 工作空间管理
+sidebar_label: 工作空间管理
+---
+
+平台上的数据由工作空间独立管理。每个工作空间都有自己的 UNS 模型、流程、数据源连接和其他资源。
+
+## 邀请用户加入工作空间
+
+1. 登录 Tier0，单击头像，然后单击 **邀请**。
+
+<img width={350} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/47-1.png" />
+
+2. 输入要邀请用户的邮箱地址，设置用户角色，然后单击 **发送**。
+- **管理员**：可以管理工作空间设置和成员。
+- **成员**：可以使用工作空间。
+
+<img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/48-1.png" />
+
+3. 可选：单击 **生成邀请码**，并将邀请码发送给用户，等待其接受邀请并加入工作空间。
+
+<img width={350} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/49-1.png" />
+
+## 新增工作空间
+
+1. 登录 Tier0，单击头像，然后单击 **新增工作空间**。
+2. 输入邀请码加入工作空间，或申请新的个人或企业版工作空间。
+
+<img width={350} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/3-5.png" />
+
+## 配置工作空间
+
+1. 登录 Tier0，单击头像，然后单击 **设置**。
+2. 在 **工作空间** 下，单击 **常规**，然后根据需要配置工作空间。
+
+<img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/50-1.png" />
+
+- 修改工作空间头像/名称/说明：单击对应字段，修改工作空间信息。
+- 退出工作空间：单击 **离开工作空间** 旁边的 **离开**，永久退出该工作空间。
+- 转让所有权：单击 **转移所有权** 旁边的 **转移**，选择一名成员并将工作空间所有权转让给该成员。
+- 删除工作空间：单击 **删除工作空间** 旁边的 **删除**，永久删除该工作空间。
+
+<img width={350} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/51-1.png" />
+
+:::info
+- 只有管理员和成员可以退出工作空间。所有者需要先将所有权转让给其他成员，才能退出。
+- 只有所有者可以转让所有权或删除工作空间。
+:::
+
+
+## 管理工作空间成员
+
+1. 登录 Tier0，单击头像，然后单击 **设置**。
+2. 在 **工作空间** 下，单击 **成员**，然后管理工作空间成员，包括邀请新成员、删除现有成员、修改角色等。
+
+<img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/52-1.png" />
+
+:::info
+相同角色不能互相操作。例如，管理员不能修改另一名管理员的角色，但可以修改成员的角色。
+:::
+
+## 管理工作空间套餐
+
+Tier0 为个人用户和企业用户提供不同的计费套餐。你可以查看各套餐详情，并根据需要升级套餐。
+
+:::info
+只有工作空间所有者可以升级套餐。
+:::
+
+1. 登录 Tier0，单击右上角头像，然后单击 **设置**。
+2. 单击 **工作空间** 下的 **计划**，然后单击 **升级计划**。
+
+<img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/56-1.png" />
+
+3. 选择 **个人**，查看各套餐详情，单击 **联系销售** 与销售团队联系。
+
+<img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/57-1.png" />
+
+4. 对于企业用户，选择 **企业** 查看各套餐详情，单击 **联系销售**，并继续与销售团队沟通。
+
+<img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/132-1.png" />
+
+## 控制工作空间数据访问
+
+:::info
+认证密钥用于通过 API 访问工作空间中的数据。更多信息请查看 [API 文档](https://clouddoc.tier0.dev/zh/openapi)。
+:::
+
+你可以使用认证密钥，通过 API 获取工作空间中的数据。
+
+1. 登录 Tier0，单击头像，然后单击 **设置**。
+2. 在 **工作空间** 下，单击 **API 密钥**，并选择要创建的 API 密钥类型。
+
+<img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/134-1.png" />
+
+- **服务密钥**：工作空间所有者和管理员可以创建该密钥，并自定义权限。
+- **个人密钥**：成员只能创建具有 **只读** 权限的该密钥。
+
+3. 单击 **创建服务密钥**，输入密钥名称，设置权限，然后单击 **保存**。
+
+<img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/135-1.png" />
+
+4. 复制生成的密钥，并在 API 调用中使用。
+
+<img width={350} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/136-1.png" />
+
+:::info
+- 如有需要，可按相同方式创建个人密钥。请妥善保管密钥，不要与他人共享。
+- 可以单击每个密钥旁边的 <img width={20} src="http://tier0saas1.oss-cn-hangzhou.aliyuncs.com/119.png" /> 编辑或删除密钥。
+:::

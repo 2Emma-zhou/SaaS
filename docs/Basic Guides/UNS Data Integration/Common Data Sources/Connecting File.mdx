@@ -58,9 +58,16 @@ docker cp /root/config.json <docker name or ID>:/app/config.json
 <img width={300} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/99.png" />
 
 4. Click **Done**, and then connect a **book**, a **sheet** and a **sheet to json** node by order to convert table data to json.
+:::info
+Install the **node-red-contrib-spreadsheet-in** node to get necessary nodes for conversion.
+:::
 
 <img width={400} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/100.png" />
 
 5. Click **Deploy** at the upper-right corner, and then click **inject** node to trigger the flow.
 
 <img width={600} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/101.png" />
+
+:::tip
+If your file is a .XLS file, please install the <a href="https://flows.nodered.org/node/node-red-contrib-xlsx-to-json">node-red-contrib-xlsx-to-json</a> node to convert the data.
+:::

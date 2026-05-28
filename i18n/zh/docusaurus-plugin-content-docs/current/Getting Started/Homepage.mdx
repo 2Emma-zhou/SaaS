@@ -3,123 +3,101 @@ hide_title: true
 sidebar_label: 首页
 ---
 
-## 首页介绍
 
-<img width={750} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/4-1.png" />
+
+<img width={750} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/4-1.png" />
 
 <table>
-        <caption>首页说明</caption>
-        <thead>
-            <tr>
-                <th>序号</th>
-                <th>名称</th>
-                <th>说明</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>菜单栏</td>
-                <td>列出平台的功能菜单，可快速访问各个功能模块。</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>工具栏</td>
-                <td>平台常用操作，包括搜索、快速指南、任务及用户信息。</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>导入/导出</td>
-                <td>整合了命名空间、数据采集层、事件流转层、仪表盘的数据导入/导出功能。</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>功能模块</td>
-                <td>平台已添加的功能模块集合。</td>
-            </tr>
-        </tbody>
-    </table>
+    <caption>首页</caption>
+    <thead>
+        <tr>
+            <th>编号</th>
+            <th>名称</th>
+            <th>说明</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>页头</td>
+            <td>显示平台名称，并支持显示或隐藏模块列表。</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>菜单栏</td>
+            <td>展示平台的功能菜单，便于快速访问各功能模块。</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>首页</td>
+            <td>显示内置 MQTT Broker 的吞吐率、最近活动、收藏的模型/流程/Notebook，以及新闻信息。</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>通用设置</td>
+            <td>包含帮助文档、通知和系统设置。</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>套餐信息</td>
+            <td>显示当前套餐及剩余有效天数。</td>
+        </tr>
+    </tbody>
+</table>
 
- <table>
-        <caption>功能模块说明</caption>
-        <thead>
-            <tr>
-                <th>模块分类</th>
-                <th>模块名称</th>
-                <th>说明</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td rowspan="4">统一命名空间</td>
-                <td>数据建模</td>
-                <td>构建数据模型，为后续数据集成与使用奠定基础。</td>
-            </tr>
-            <tr>
-                <td>数据连接</td>
-                <td>通过可视化流编程工具定义已创建模型的数据源。</td>
-            </tr>
-            <tr>
-                <td>事件流程</td>
-                <td>通过可视化流编程工具自定义数据流，整合数据采集层与命名空间模块。</td>
-            </tr>
-            <tr>
-                <td>数据看板</td>
-                <td>按特定设计在仪表盘中展示命名空间的数据。</td>
-            </tr>
-            <tr>
-                <td rowspan="3">工具集</td>
-                <td>SQL编辑器</td>
-                <td>管理从数据源管理连接的数据库。</td>
-            </tr>
-            <tr>
-                <td>Notebook</td>
-                <td>集成交互式编程工具，方便使用Python脚本（例如：训练模型、执行SQL查询等）。</td>
-            </tr>
-            <tr>
-                <td>数据源管理</td>
-                <td>连接第三方数据源，实现快速访问。</td>
-            </tr>
-            <tr>
-                <td rowspan="10">系统管理</td>
-                <td>路由配置</td>
-                <td>自定义平台功能模块路由。</td>
-            </tr>
-            <tr>
-                <td>身份与访问管理</td>
-                <td>管理用户权限。</td>
-            </tr>
-            <tr>
-                <td>用户管理</td>
-                <td>支持普通用户及角色管理。</td>
-            </tr>
-            <tr>
-                <td>容器管理</td>
-                <td>集成容器管理工具，管理容器。</td>
-            </tr>
-            <tr>
-                <td>关于我们</td>
-                <td>介绍平台，展示集成的开源应用。</td>
-            </tr>
-            <tr>
-                <td>高阶使用</td>
-                <td>提供集成应用的账号密码，方便深度探索。</td>
-            </tr>
-            <tr>
-                <td>插件管理</td>
-                <td>管理平台上安装的插件。</td>
-            </tr>
-            <tr>
-                <td>主题管理</td>
-                <td>管理平台主题。</td>
-            </tr>
-            <tr>
-                <td>国际化管理</td>
-                <td>管理前端语言显示，支持多语言切换。</td>
-            </tr>
-            <tr>
-                <td>菜单配置</td>
-                <td>支持对所有现有功能模块的菜单进行自定义修改。</td>
-            </tr>
-        </tbody>
-    </table>
+:::info
+当套餐剩余天数大于30天时，套餐信息不再显示。
+:::
+
+<table>
+    <caption>功能模块说明</caption>
+    <thead>
+        <tr>
+            <th>模块</th>
+            <th>名称</th>
+            <th>说明</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan="3">统一命名空间</td>
+            <td><a href="../Basic Guides/UNS Data Integration/Connect Data via MQTT">Edge</a></td>
+            <td>生成认证凭据，供第三方通过 MQTT 连接到平台。</td>
+        </tr>
+        <tr>
+            <td><a href="../Basic Guides/UNS Data Integration/Build Data Models">UNS</a></td>
+            <td>构建数据模型，用于后续的数据接入和使用。</td>
+        </tr>
+        <tr>
+            <td><a href="../Basic Guides/UNS Data Integration/Connect Data via Flows">数据流程</a></td>
+            <td>基于 Node-RED 自定义数据流，集成 <a href="../Basic Guides/UNS Data Integration/Connect Data via Flows"><b>Source Flow</b></a> 和 <a href="../Basic Guides/UNS Data Integration/Process Data"><b>Event Flow</b></a> 模块，分别用于数据接入和数据处理。</td>
+        </tr>
+        <tr>
+            <td rowspan="3"><a href="../Basic Guides/App/Build Applications">App</a></td>
+            <td>构建器</td>
+            <td>基于大语言模型，通过自然语言创建应用。</td>
+        </tr>
+        <tr>
+            <td>项目</td>
+            <td>分类管理通过 <b>构建器</b> 构建的应用或功能模块。例如，一个 MES 项目可以包含生产排程、物料管理、质量管理等 3 个功能应用。</td>
+        </tr>
+        <tr>
+            <td>应用中心</td>
+            <td>显示当前用户有权限访问的所有已发布应用。</td>
+        </tr>
+        <tr>
+            <td rowspan="2">Anchor</td>
+            <td><a href="../Basic Guides/App/Anchor">模型库</a></td>
+            <td>可连接 UNS 数据的数字孪生模型库。</td>
+        </tr>
+        <tr>
+            <td><a href="../Basic Guides/App/Scene">场景</a></td>
+            <td>可视化和交互数字孪生模型的场景。</td>
+        </tr>
+        <tr>
+            <td>数据分析</td>
+            <td><a href="../Basic Guides/Database Management/Notebook">Notebook</a></td>
+            <td>采用 Marimo Notebook，便于使用 Python 脚本进行高级数据分析。例如，训练模型、执行 SQL 查询，交互式数据报告等。</td>
+        </tr>
+    </tbody>
+</table>

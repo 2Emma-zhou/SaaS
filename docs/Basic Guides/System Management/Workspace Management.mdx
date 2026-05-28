@@ -1,4 +1,4 @@
-Data on the platform is isolated by workspaces. Each workspace has its own UNS models, flows, data source connections, and users.
+Data on the platform is managed independently by workspaces. Each workspace has its own UNS models, flows, data source connections, and other resources.
 
 ## Inviting Users to Workspaces
 1. Log in to Tier0, click on your avatar and then click **Invite**.
@@ -17,7 +17,7 @@ Data on the platform is isolated by workspaces. Each workspace has its own UNS m
 
 ## Adding Workspace
 1. Log in to Tier0, click on your avatar and then click **Add workspace**.
-2. Either enter the invitation code to join a workspace or to apply for a new one.
+2. Either enter the invitation code to join a workspace or to apply for a new personal or enterprise workspace.
 
 <img width={350} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/3.png" />
 
@@ -49,4 +49,51 @@ Data on the platform is isolated by workspaces. Each workspace has its own UNS m
 
 :::info
 Same roles cannot act on each other. For example, an admin cannot change the role of another admin, but can change the role of a member.
+:::
+
+## Managing Workspace Plans
+
+Tier0 offers different billing plans for personal and enterprise users. You can view the details of each plan and upgrade your plan as needed.
+:::info
+Only the workspace owner can upgrade the plan.
+:::
+
+1. Log in to Tier0, click your avatar at the upper-right corner, and then click **Settings**.
+2. Click **Plan** under **Workspace**, and then click **Upgrade Plan**.
+
+<img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/56.png" />
+
+3. Select **Personal**, and view the details of each plan, click **Email Sales** and get in touch with our sales team.
+
+<img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/57.png" />
+
+4. (optional) For business users, select **Business** to view the details of each plan, click **Email Sales** and proceed with our sales team.
+
+<img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/132.png" />
+
+## Controlling Workspace Data Access
+
+:::info
+Authentication keys are for API access to the data in your workspace. Check out the [API documentation]((https://clouddoc.tier0.dev/openapi)) for more details.
+:::
+You can use API to get data in your workspace with authentication keys.
+1. Log in to Tier0, click on your avatar, and then click **Settings**.
+2. Under **Workspace**, click **API Keys**, and select a type of API key to create. 
+
+<img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/134.png" />
+
+- **Service Key**: Workspace owner and admin can create this key with self-defined permissions.
+- **Personal Key**: Members can only create this key with **Read-only** permission.
+
+3. Click **Create Service Key**, and enter the key name, set the permissions, and then click **Save**.
+
+<img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/135.png" />
+
+4. Copy the generated key and use it in your API calls.
+
+<img width={350} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/136.png" />
+
+:::info
+- Do the same to create a personal key if needed, but remember to keep the key secure and do not share it with others.
+- You can edit/delete the keys by clicking <img width={20} src="http://tier0saas1.oss-cn-hangzhou.aliyuncs.com/119.png" /> next to each key.
 :::

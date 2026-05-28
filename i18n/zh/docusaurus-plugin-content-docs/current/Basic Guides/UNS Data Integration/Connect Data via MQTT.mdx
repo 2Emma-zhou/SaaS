@@ -1,0 +1,101 @@
+---
+sidebar_label: 连接 MQTT 客户端（Edge）
+hide_title: true
+---
+
+:::info 什么是 MQTT？
+- MQTT 是一种轻量级实时消息协议，支持已连接的设备（客户端）向中央服务器（Broker）发送数据，并立即接收更新。
+- 出于安全考虑，可以在中央服务器（Broker）上添加访问控制，因此设备（客户端）在连接前必须完成身份认证。
+- 关于 MQTT 的更多信息，请参见 [MQTT Protocol](https://mqtt.org/)。
+
+<img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/112.png" />
+
+:::
+
+## 如何通过认证连接 MQTT 客户端
+
+Tier0 提供内置 MQTT Broker，支持第三方客户端连接，并向 **UNS** 发布数据或订阅 **UNS** 中的数据。
+
+1. 登录 Tier0，选择 **Edge**。
+
+<img width={650} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/22-1.png" />
+
+<table>
+  <thead>
+    <tr>
+      <th>编号</th>
+      <th>项目</th>
+      <th>说明</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+      <td>1</td>
+      <td>Broker 信息</td>
+      <td>显示内部 MQTT Broker 的连接信息。</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>当前在线连接数</td>
+      <td>显示当前连接到内部 MQTT Broker 的在线连接数量。</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>客户端列表</td>
+      <td>显示已连接的客户端列表和已生成的认证凭据。</td>
+    </tr>
+  </tbody>
+</table>
+
+3. 单击 **MQTT 凭据**。
+
+4. 单击 **新建凭据**，输入凭据描述，然后单击 **创建**。
+
+<img width={350} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/19-1.png" />
+
+:::info
+- 请记录生成的 **客户端 ID**、**用户名** 和 **密码**。配置 MQTT 客户端时需要使用这些信息。
+- 以下客户端仅作为示例，用于说明如何使用认证凭据连接到内部 MQTT Broker。
+:::
+
+5. 安装 MQTT 客户端，例如 MQTTX、MQTT Explorer 等。
+6. 使用 Tier0 中生成的认证凭据连接客户端。
+
+<div className="doc-indent">
+
+- **<a href="https://mqttx.app/" target="_blank" rel="noopener noreferrer">MQTTX</a>**
+
+1. 在 MQTTX 中使用生成的认证凭据添加新连接。
+
+<img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/20.png" />
+
+2. 单击 **Connect**。
+
+- **<a href="https://mqtt-explorer.com/" target="_blank" rel="noopener noreferrer">MQTT Explorer</a>**
+
+1. 在 MQTT Explorer 中使用生成的认证凭据添加新连接。
+
+<img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/20-1.png" />
+
+2. 单击 **ADVANCED**，修改 Client ID。
+
+<img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/20-2.png" />
+
+3. 单击 **BACK**，然后单击 **CONNECT**。
+
+- **Node-RED**
+
+1. 打开 Node-RED 实例，拖拽一个 `mqtt in` 节点并双击配置。
+2. 使用 Tier0 中生成的认证凭据添加新的 MQTT Broker。
+
+<img width={350} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/20-3.png" />
+<img width={350} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/20-4.png" />
+
+</div>
+
+7. 返回 Tier0 的 **Edge** 页面，单击 **客户端** 页签，检查客户端是否已连接。
+8. 复制 **UNS** 下数据模型的 Topic，并通过客户端向该 Topic 发布消息。
+
+  <img width={450} src="https://tier0saas1.oss-cn-hangzhou.aliyuncs.com/21.png" />
+
+9. 返回 **UNS**，检查目标 Topic 是否已接收到数据。

@@ -32,11 +32,11 @@ Tier0 enables you to build a scene using 3D models that have been mapped with re
             <td rowspan="2">3</td>
             <td rowspan="2">Axis</td>
             <td>Local/Global</td>
-            <td>Decides whether the model axis is based on the model itself, or the entire screen.</td>
+            <td>Decides whether the model coordinates is based on the model itself, or the entire screen.</td>
         </tr>
         <tr>
         <td>Center/Bottom</td>
-            <td>Sets the axis position to be at the center or bottom of the model.</td>
+            <td>Sets the coordinates position to be at the center or bottom of the model.</td>
         </tr>
         <tr>
             <td>4</td>
@@ -47,7 +47,7 @@ Tier0 enables you to build a scene using 3D models that have been mapped with re
         <tr>
             <td>5</td>
             <td colspan="2">Scene Collection</td>
-            <td>Displays all added models in the scene.</td>
+            <td>Lists all models in the scene.</td>
         </tr>
         <tr>
             <td>6</td>
@@ -66,7 +66,7 @@ Tier0 enables you to build a scene using 3D models that have been mapped with re
         </tr>
         <tr>
         <td>Object</td>
-            <td>Displays the properties of the selected model in the scene. You can edit its position by manually changing the values.</td>
+            <td>Displays the attributes of the selected model in the scene. You can edit its position by manually changing the values.</td>
         </tr>
         </table>
 
@@ -128,6 +128,10 @@ Tier0 enables you to build a scene using 3D models that have been mapped with re
             <td>Moves the camera view horizontally/vertically without rotating the camera. Positive or negative values shift the framing left or right/up or down.</td>
             </tr>
             <tr>
+            <td>Clip Mode</td>
+            <td>Specifies how the camera clipping range is controlled. In <b>Auto</b> mode, the system automatically calculates the visible range based on the scene. In <b>Manual</b> mode, you can set the near and far clipping distances using <b>Clip Start</b> and <b>End</b>.</td>
+            </tr>
+            <tr>
             <td>Clip Start</td>
             <td>Defines the nearest distance from the camera at which objects start to be visible. Objects closer than this distance will be clipped.</td>
             </tr>
@@ -157,11 +161,11 @@ Tier0 enables you to build a scene using 3D models that have been mapped with re
             <td>Whether the coordinate axes are displayed in the scene.</td>
             </tr>
             <tr>
-            <td>Area Size</td>
+            <td>Grid Range</td>
             <td>Defines the overall visible size of the grid area.</td>
             </tr>
             <tr>
-            <td>Min Cell Size</td>
+            <td>Min. Cell Size</td>
             <td>Defines the minimum size of each grid cell.</td>
             </tr>
             <tr>
@@ -182,23 +186,27 @@ Tier0 enables you to build a scene using 3D models that have been mapped with re
     </thead>
     <tbody>
         <tr>
-        <td>Preset</td>
+        <td>Light Preset</td>
         <td>Selects a predefined lighting setup. Available options include <b>Balanced</b>, <b>Soft</b>, and <b>Contrast</b>.</td>
         </tr>
         <tr>
-        <td>Ambient</td>
+        <td>IBL</td>
+        <td>Enables image-based lighting, which uses an environment image to provide realistic ambient illumination and reflections for the scene. The intensity value controls the strength of the IBL effect.</td>
+        </tr>
+        <tr>
+        <td>Ambient Light</td>
         <td>Controls the intensity of ambient light, which provides overall non-directional illumination to the entire scene.</td>
         </tr>
         <tr>
-        <td>Key</td>
+        <td>Key Light</td>
         <td>Controls the intensity of the main light source, which is the primary light shaping the object and creating the main highlights and shadows.</td>
         </tr>
         <tr>
-        <td>Fill</td>
+        <td>Fill Light</td>
         <td>Controls the intensity of the fill light, which softens shadows created by the key light and reduces contrast.</td>
         </tr>
         <tr>
-        <td>Back</td>
+        <td>Back Light</td>
         <td>Controls the intensity of the back light, which illuminates the object from behind to help separate it from the background.</td>
         </tr>
     </tbody>
@@ -208,7 +216,7 @@ Tier0 enables you to build a scene using 3D models that have been mapped with re
 
 ## How to Build a Digital Twin Scene
 1. Log in to Tier0, select **Anchor** > **Scene**.
-2. Click **New Scene** at the upper-right corner, enter the scene information, and click **OK**.
+2. Click **New Scene** at the upper-right corner, enter the scene information, and click **Create**.
 
 <img width={550} src="http://tier0saas1.oss-cn-hangzhou.aliyuncs.com/90.png" />
 
@@ -217,8 +225,8 @@ Tier0 enables you to build a scene using 3D models that have been mapped with re
 <img width={550} src="http://tier0saas1.oss-cn-hangzhou.aliyuncs.com/91.png" />
 
 4. Configure the models added to the scene.
-    1. Set the model axis.
-    2. Adjust the model position, rotation and scale based on the selected axis.
+    1. Set the model coordinates.
+    2. Adjust the model position, rotation and scale based on the selected coordinates.
     3. On the right side, edit the viewport, camera and grid as needed.
     4. Edit lighting settings.
     5. (optional) Edit the model position by setting the numbers under **Object** > **Transform**.
